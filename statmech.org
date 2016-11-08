@@ -1,0 +1,127 @@
+#+OPTIONS: toc:nil
+#+OPTIONS: tex:dvipng
+
+#+TITLE: Statistical Mechanics
+#+AUTHOR: David A. Ventimiglia
+#+EMAIL: dventimi@gmail.com
+
+#+HTML_HEAD_EXTRA: <style type="text/css">
+#+HTML_HEAD_EXTRA: dd, dt {text-align: center;}
+#+HTML_HEAD_EXTRA: </style>
+
+- What is the relationship between $C_p$ and $C_v$? [fn::Prat 4.2] :: 
+
+     $C_p = C_v + 1$ 
+
+- What useful relation ivolves the ratio of $C_p/C_v$? :: 
+
+     $PV^{\gamma}\bigr\rvert_{N,x} = constant$
+
+     where $\gamma = C_p\bigr\rvert_{C_v}$
+
+- How is the pressure defined and what is an expression for it in the Grand Canonical Ensemble? [fn::Pratt 1.5] :: 
+
+     Pressure is the dependence of the thermodynamic potentials upon the
+     volume.
+
+     $P(\mu, T, V) = \frac{\partial}{\partial_v}\Omega_{GC}(\mu/T, T, V)$
+
+- In the classical limit $\mu < 0$.  What does it mean for Bosons if $\mu > 0$? [fn::Pratt 2.3] :: 
+
+     It means nothing.
+
+     For $\mu > 0$, $f(\epsilon)$ becomes negative for Bosons, which is
+     non-physical.
+
+- What is the condition for Bose condensation to occur (/non-relativistic/)? [fn::Pratt 2.3] ::
+
+     As $\rho$ increases, $\mu$ approaches 0 from below.  If $\mu$
+     reaches 0 at a finite density, condensation will occur.  That is,
+
+     $\mu_{CONDENSE} = 0$
+
+     $\rho(\mu_{CONDENSE}) = \rho_{CRIT}$
+
+- What is the condition for Bose condensation to occur (/relativistic/)? [fn::Pratt 2.3] ::
+
+     $\mu_{CONDENSE} = m$
+
+- What is the Hamiltonian for a single spin in the Ising Model, in the mean-field limit? [fn::Pratt 2.5] ::
+
+     $\mathcal{H}_i = -qJ\langle\rho\rangle\rho_i - \mu B \rho_i$
+
+- Give the general expression for Boson density at 0 chemical potential (/non-relativistic/). [fn::Pratt 2.3] ::
+
+     $\rho\bigr\rvert_{\mu=0} = (2J+1)
+     \frac{(mT)^{D/2}}{(2\pi\hbar)^D} \bigg( \int d^D x e^{-x^2/2}
+     \bigg) \sum_{n=1}^{\infty} n^{-D/2}$
+
+- Under what circumstances wil there be---or not be---Bose condensation? [fn::Pratt 2.3] ::
+
+     $\rho\bigr\rvert_{\mu=0} \sim \frac{p^{D-1} dp}{\beta \epsilon (p)} \sim \frac{p^{D-1} dp}{\beta p^n}$
+
+     \begin{equation*}
+     n = 
+     \begin{cases}
+     2 & non-relativistic \\
+     1 & relativistic
+     \end{cases}
+     \end{equation*}
+
+     Therefore, for $D-1 < n$, $\rho\bigr\rvert_{\mu=0}$ diverges as
+     $p \to 0$.  So, for condensation to occur,
+
+     \begin{equation*}
+     D \rangle
+     \begin{cases}
+     2 & non-relativistic \\
+     1 & relativistic
+     \end{cases}
+     \end{equation*}
+
+- For a Boson gas whose density $\rho$ has exceeded the condensation critical density $\rho_{c} = \rho(\mu = 0)$, what is the density of the condensate? [fn::Pratt 2.3] ::
+
+     $\rho_{CONDENSATE} = \rho - \rho_c$
+
+- What are the number of ways to arrange $N_S$ systems inf configurations $n_0$, $n_1$, $n_2$, ... where $n_i$ is the number of systems in configuration $i$ ? [fn::Pratt 1.1] ::
+
+     $I = \frac{N_s!}{n_0! n_1! ...}$
+
+     $I$ is defined by Pratt as "ignorance."
+
+- What are the stages of the Carnot cycle? [fn::Pratt 4.2] ::
+
+  1. Isothermal expansion at $T_H$:  absorbing heat $Q_H$
+  2. Isentropic expansion to $T_C$:  $PV^{\gamma}\bigr\rvert_{before} = PV^{\gamma}\bigr\rvert_{after}$
+  3. Isothermal compression at $T_C$:  exhausting heat at $Q_C$
+  4. Isentropic compression to $T_H$:  $PV^{\gamma}\bigr\rvert_{before} = PV^{\gamma}\bigr\rvert_{after}$
+
+- What work is done by a Carnot cycle? [fn::Pratt 4.2] ::
+
+     $W = Q_H - Q_C$
+
+- Derive a useful expression for the pressure for systems whose dimensions are much larger than any correlations. [fn::Pratt 1.5] ::
+
+  1. $\Omega \propto V$ and \Omega_{GC} = PV$
+  2. $P V = T ln Z_{GC} = T S - \langle E \rangle + \mu \langle Q \rangle$
+
+- What is $Z_{int}$ for a one-dimensional harmonic oscillator? [fn::Pratt 4.2] ::
+
+     $Z_{int} = 1 + e^{-\beta \hbar \omega} + e^{-2 \beta \hbar \omega} \ldots$
+
+- What is the average internal energy of a one-dimensional harmonic oscillator?  [fn::Pratt 4.2] ::
+
+     $\langle E/N \rangle = \hbar \omega \frac{e^{-\beta\hbar\omega}}{1 - e^{-\beta\hbar\omega}}$
+
+     \begin{equation*}
+     \langle E/N \rangle = 
+     \begin{cases}
+     \hbar \omega e^{-\hbar\omega/T} & T \ll \hbar\omega \\
+     T & T \gg \hbar\omega
+     \end{cases}
+     \end{equation*}
+
+
+# Local Variables:
+# org-html-postamble: nil
+# End:
