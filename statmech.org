@@ -121,6 +121,66 @@
      \end{cases}
      \end{equation*}
 
+- How is the Carnot Efficiency $e$ defined?  [fn::Pratt 4.3] ::
+
+     $e = \frac{W}{Q_H} = \frac{Q_H - Q_C}{Q_H} = 1 - \frac{Q_C}{Q_H}
+     = 1 - \frac{T_C}{T_H}$
+
+- In the absence of collisions, what is the entropy of a dilute gas of Fermions, independent of assumptions about thermalization?  [fn::Pratt 4.7] ::
+
+     \[ = (2J+1) \int {\frac{d^3p d^3r}{(2\pi\hbar)^3} \big\{-(1-f) ln
+     (1-f) - f ln f\big\}}\]
+
+     $f$ is the probability of a phase space cell containing a
+     Fermion, not assumed to be a Fermi-Dirac distribution.
+
+- Why can a one-dimensional Ising Model not undergo spontaneous magnetization?  [fn::Pratt 5.3] ::
+
+     In one-dimension, only one spin need flip in order to break a
+     chain of spins, so the penalty for doing so is finite.
+
+- What is the partition function for the one-dimensional Ising Model?  [fn::Pratt 5.3] ::
+
+     \begin{eqnarray*}
+     Z = \sum exp \big\{\beta J (\bar{\sigma_1}\bar{\sigma_2}+\bar{\sigma_2}\bar{\sigma_3}+\ldots+\bar{\sigma_n}\bar{\sigma_1}) + \\ 
+         \beta \mu B (\bar{\sigma_1+\sigma_1+\ldots+\sigma_n}) \big\}
+     \end{eqnarray*}
+
+- Express the partition function for the one-dimensional Ising Model as a product of matrix elements.  [fn::Pratt 5.3] ::
+
+     \[ Z = \sum \langle\sigma_1\rvert\sigma_{12}\rvert\sigma_2\rangle
+     \langle\sigma_2\rvert\sigma_{23}\rvert\sigma_3\rangle \ldots
+     \langle\sigma_n\rvert\sigma_{n1}\rvert\sigma_1\rangle \]
+
+     \begin{eqnarray*}
+     P_{i,i+1} = exp \beta \big\{J\sigma_i\sigma_{i+1} + \frac{1}{2}\mu\beta(\sigma_i+\sigma_{i+1})\big\} \\
+     = \left(
+     \begin{array}{cc}
+     e^{\beta(J+\mu\beta)} & e^{-\beta J} \\
+     e^{-\beta J} & e^{\beta(J-\mu\beta)}
+     \end{array} \right)
+     \end{eqnarray*}
+
+- In the one-dimensional Ising Model, what are the eigenvalues of the probability matrix $P_{i,i+1}$?  [fn::Pratt 5.3] ::
+
+     \[\lambda_\pm = e^{\beta J} cosh (\beta\mu B) \pm \sqrt{e^{2\beta
+     J} sinh^2(\beta\mu B) + e^{-2\beta J}}\]
+
+- In terms of the eigenvalues of the one-dimensional Ising Model's probability matrix $P_{i,i+1}$, what is the partition function?  [fn::Pratt 5.3] ::
+
+     \[ Z = \lambda_+^n + \lambda_-^n \]
+
+- What is the energy of the $n^{th}$ level of a simple one-dimensional harmonic oscillator?  [fn::Pratt 4.2] ::
+
+     \[ \epsilon_{V \rvert B} = n \hbar \omega \]
+
+- What is the entropy per system, in terms of $I$ ?  [fn::Pratt 1.1] ::
+
+     \[ S \equiv \frac{1}{N_s} ln I \]
+
+- What are the first two terms of the Stirling Approximation?  [fn::Pratt 1.1] ::
+
+     \[ \lim_{N\to 0} ln N! \approx N ln N - N \]
 
 # Local Variables:
 # org-html-postamble: nil
