@@ -102,8 +102,11 @@
 
 - Derive a useful expression for the pressure for systems whose dimensions are much larger than any correlations. [fn::Pratt 1.5] ::
 
-  1. $\Omega \propto V$ and \Omega_{GC} = PV$
-  2. $P V = T ln Z_{GC} = T S - \langle E \rangle + \mu \langle Q \rangle$
+     \begin{eqnarray*}
+     \Omega \propto V$ and \Omega_{GC} = PV \\
+     P V = T ln Z_{GC} = T S - \langle E \rangle + \mu \langle Q \rangle
+     \end{eqnarray*}
+
 
 - What is $Z_{int}$ for a one-dimensional harmonic oscillator? [fn::Pratt 4.2] ::
 
@@ -222,29 +225,30 @@
 
 - How do we use the method of Lagrange Multiplers to maximaze the entropy under the constraint that the system must be in /some/ state?  [fn::Pratt 1.1] ::
 
-  1. \[ \frac{\partial}{\partial p_i} \Big(-\sum_j p_j ln p_j -
-     \lambda \Big[\sum_j p_j - 1\Big] \Big) = 0 \]
-  2. \[ \sum_j p_j - 1 = 0 \]
-  3. \[ ln p_i = -\lambda - 1 \]
-  4. \[ p_i = e^{-\lambda-1} \]
+     \begin{eqnarray*}
+     \frac{\partial}{\partial p_i} \Big(-\sum_j p_j ln p_j - \lambda \Big[\sum_j p_j - 1\Big] \Big) = 0 \\
+     \sum_j p_j - 1 = 0 \\
+     ln p_i = -\lambda - 1 \\
+     p_i = e^{-\lambda-1} 
+     \end{eqnarray*}
 
 - What is the probability of a system being in a particular state, if we use Lagrange multipliers to constrain the average energy and average number of particles?  [fn::Pratt 1.3] ::
 
-     \begin{eqnarray}
+     \begin{eqnarray*}
      p_i = e^{-1-\lambda-\beta\epsilon_i-\alpha Q_i} \\
      \beta = 1/T \\
      \alpha = -\beta\mu = -\mu/T
-     \end{eqnarray}
+     \end{eqnarray*}
 
 - How does the partition function relate to the probabilities for the states of a system?  [fn::Pratt 1.4] ::
 
      It is the normalization factor:
 
-     \begin{eqnarray}
+     \begin{eqnarray*}
      p_i = \frac{1}{Z} e^{-\beta\epsilon_i-\alpha Q_i} \\
      Z = e^{1+\lambda} = \sum_i e^{-\beta\epsilon_i - \alpha Q_i} \\
      ln Z = 1 + \lambda
-     \end{eqnarray}
+     \end{eqnarray*}
 
 - What is the average spin in the Ising Model under the mean-field approximation, with no external field?  [fn::Pratt 5.2] ::
 
@@ -270,10 +274,10 @@
 
 - What is the density of single party states for a free particle?  [fn::Pratt 2.1] ::
 
-     \begin{eqnarray}
+     \begin{eqnarray*}
      \mathcal{D}(\epsilon) = \frac{dN}{d^3x d^3p} = \frac{1}{(2\pi\hbar)^3} & \text{(3-D)} \\
      \mathcal{D}(\epsilon) = \frac{dN}{d^Dx d^Dp} = \frac{1}{(2\pi\hbar)^D} & \text{(General)}
-     \end{eqnarray}
+     \end{eqnarray*}
 
 - What is the energy of the $l^{th}$ excited level of a diatomic rotator with moment of inertia $I$ ?  [fn::Pratt 4.2] ::
 
@@ -281,14 +285,14 @@
 
 - What is the internal partition function for a diatomic rotator?  At high and low $T$ limits?  [fn::Pratt 4.2] ::
 
-     \begin{eqnarray}
+     \begin{eqnarray*}
      Z_{rot} = \sum_{l=0}^{\infty}(2l+1)e^{-\beta\hbar^2\frac{l(l+1)}{2I}} \\
      z_{rot} =
      \begin{cases}
      e^{-\beta\hbar^2/2I} & T \ll \hbar^2/I \\
      IT/\hbar^2 & T \gg \hbar^2/I
      \end{cases}
-     \end{eqnarray}
+     \end{eqnarray*}
 
 - How is the Fermi momentum $p_f$ typically defined?  [fn::Pratt 2.4] ::
 
@@ -300,10 +304,10 @@
 
 - What are the average energy and average particle number, in terms of the partition function?  [fn::Pratt 1.4] ::
 
-     \begin{eqnarray}
+     \begin{eqnarray*}
      \langle E \rangle = -\frac{\partial}{\partial\beta} ln Z \\
      \langle Q \rangle = -\frac{\partial}{\partial\alpha} ln Z = \frac{\partial}{\partial(\beta\mu)} ln Z
-     \end{eqnarray}
+     \end{eqnarray*}
 
 - In the one-dimensional Ising Model, what is the average spin?  [fn::Pratt 5.3] ::
 
@@ -318,11 +322,11 @@
 
 - What are the conditions for phase coexistence?  [fn::Pratt 3.3] ::
 
-     \begin{eqnarray}
+     \begin{eqnarray*}
      T_{gas} = T_{liq} \\
      P_{gas} = P_{liq} \\
      \mu_{gas} = \mu_{liq}
-     \end{eqnarray}
+     \end{eqnarray*}
 
 - How do the Maxwell criteria express the condition that $\mu_{gas} = \mu_{liq}$ ?  [fn::Pratt 3.3] ::
 
