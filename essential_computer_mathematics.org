@@ -1,7 +1,8 @@
 #+OPTIONS: toc:nil
 #+OPTIONS: tex:dvipng
 #+HTML_HEAD_EXTRA: <style type="text/css">
-#+HTML_HEAD_EXTRA: dd, dt {text-align: center;}
+#+HTML_HEAD_EXTRA: dt {text-align: center;}
+#+HTML_HEAD_EXTRA: dd {text-align: center;}
 #+HTML_HEAD_EXTRA: li {text-align: left;}
 #+HTML_HEAD_EXTRA: table {margin-left: auto; margin-right: auto;}
 #+HTML_HEAD_EXTRA: </style>
@@ -10,7 +11,7 @@
 #+AUTHOR: David A. Ventimiglia
 #+EMAIL: dventimi@gmail.com
 
-* Chapter 1:  Binary Number System
+* Binary Number System
   - What does /bistable/ mean?  [fn::page 1]  ::
 
        /Bistable/ refers to the way that many of the electronic
@@ -90,7 +91,7 @@
        9, carry the tens digit 1 to the next column.
 
     3. If there are additional columns or if there is a carry from
-       Step 2, add the next column and repeate Step2.  Otherwise,
+       Step 2, add the next column and repeat Step2.  Otherwise,
        stop.
 
   - What are the two numbers in a sum called?  [fn::page 7] ::
@@ -109,23 +110,23 @@
 
   - What is the addition table and what are the addition facts of binary digits?  [fn::page 8] ::
 
-#+CAPTION: Binary Addition Table
-    |---+---+----|
-    | + | 0 |  1 |
-    |---+---+----|
-    | / | < |  < |
-    | 0 | 0 |  1 |
-    | 1 | 1 | 10 |
-    |---+---+----|
+      #+CAPTION: Binary Addition Table
+      |---+---+----|
+      | + | 0 |  1 |
+      |---+---+----|
+      | / | < |  < |
+      | 0 | 0 |  1 |
+      | 1 | 1 | 10 |
+      |---+---+----|
 
-#+CAPTION:  Binary Addition Facts
-    |----------------------------------|
-    | 0 + 0 = 0                        |
-    | 0 + 1 = 1                        |
-    | 1 + 0 = 1                        |
-    | 1 + 1 = 0, with a carry of 1     |
-    | 1 + 1 + 1 = 1, with a carry of 0 |
-    |----------------------------------|
+      #+CAPTION:  Binary Addition Facts
+      |----------------------------------|
+      | 0 + 0 = 0                        |
+      | 0 + 1 = 1                        |
+      | 1 + 0 = 1                        |
+      | 1 + 1 = 0, with a carry of 1     |
+      | 1 + 1 + 1 = 1, with a carry of 0 |
+      |----------------------------------|
 
   - What is a way to perform /binary multiplication/ of two numbers?  [fn::page 10] ::
 
@@ -145,13 +146,13 @@
 
   - What are the subtraction facts of binary digits?  [fn::page 12] ::
 
-#+CAPTION:  Binary Subtraction Facts
-|----------------------------------------------------|
-| 0 - 0 = 0                                          |
-| 1 - 0 = 1                                          |
-| 1 - 1 = 0                                          |
-| 0 - 1 = 1, with a borrow of 1 from the next column |
-|----------------------------------------------------|
+       #+CAPTION:  Binary Subtraction Facts
+       |----------------------------------------------------|
+       | 0 - 0 = 0                                          |
+       | 1 - 0 = 1                                          |
+       | 1 - 1 = 0                                          |
+       | 0 - 1 = 1, with a borrow of 1 from the next column |
+       |----------------------------------------------------|
 
   - What two separate but related situations in computer mathematics involve /complements/?  [fn::page 14] ::
 
@@ -196,3 +197,452 @@
 
        Simply invert each digit.  I.e. 0 is replaced by 1 and 1 is
        replaced by 0.
+
+* Computer Codes
+
+  - What do we mean by /digits/?  [fn::page 28]  ::
+
+       The $b$ symbols---where $b > 1$ is the /base/ of the
+       system---are called the /digits/ of the system.
+
+       Any integer $N$ is represented in the system by a sequence of
+       base-/b/ digits:
+
+       \[ N = a_n a_{n-1} \ldots a_1 a_0 \]
+
+       Then $b^k$ is the /place value/ of $a_k$ and
+
+       \[ N = a_n \times b^n + a_{n-1} \times b^{n-1} + \ldots + a_2 \times b^2 + a_1 \times b^1 + a_0 \times b^0 \]
+
+       is called the /expanded form/ or /expanded notation/ for $N$.
+
+  - What is an algorithm to perform *Base-/b/-to-Decimal* conversion of a number $N_b$?  [fn::page 29]  ::
+
+    1. *Integral part* $N_I$: Multiply the leftmost digit by the base $b$
+       and add the next digit to the right.  Multiply the sum by
+       the base $b$ and add the next digit.  Repeat the process
+       until the rightmost digit is added.  The final sum is the
+       required decimal equivalent.
+
+    2. *Fractional part* $N_F$: Multiply the rightmost digit by $1/b$ and
+       add the next digit to the left.  Multiply the sum by $1/b$ and
+       add the next digit.  Repeat the process until the leftmost
+       digit is added and the sum is multiplied by $1/b$.  The final
+       product is the required decimal equivalent.
+
+    3. Combine the *integral* and *fractional* parts:  $N = $N_I + $N_F$.
+
+  - What is an algorithm to perform *Decimal-to-Base-/b/* conversion of a number $N$?  [fn::page 30]  ::
+
+    1. *Integral part* $N_I$: Divide $N_I$ and each succeeding
+       quotient by $b$ until a zero quotient is obtained.  The
+       sequence of remainders, in reverse order, yields the base-/b/
+       representation of $N_I$.
+
+    2. *Fractional part* $N_F$: Multiply $N_F$ and the fractional part
+       of each succeeding product by /b/ until a 0 fractional part or
+       a duplicate fractional part is obtained.  Then the finite
+       sequence or infinite repeating sequence of integral parts of
+       the products gives the base-/b/ representation of $N_F$.
+
+  - What is the binary equivalent of the octal digit 0?  [fn::page 30] ::
+
+       000
+
+  - What is the binary equivalent of the octal digit 1?  [fn::page 30] :: 
+
+       001
+
+  - What is the binary equivalent of the octal digit 2?  [fn::page 30] :: 
+
+       010
+
+  - What is the binary equivalent of the octal digit 3?  [fn::page 30] :: 
+
+       011
+
+  - What is the binary equivalent of the octal digit 4?  [fn::page 30] :: 
+
+       100
+
+  - What is the binary equivalent of the octal digit 5?  [fn::page 30] :: 
+
+       101
+
+  - What is the binary equivalent of the octal digit 6?  [fn::page 30] :: 
+
+       110
+
+  - What is the binary equivalent of the octal digit 7?  [fn::page 30] :: 
+
+       111
+
+  - What is a simple procedure for adding two octal numbers?  [fn::page 33] :: 
+
+    1. Sum the individual pairs of digits taken from each number, left to right.
+
+    2. From right to left, for each sum of pairs of digits, if the sum
+       exceeds 7 then subtract 8 and carry a 1 to the next column
+
+  - What is a simple procedure for adding two hexadecimal numbers?  [fn::page 33] :: 
+
+    1. Sum the individual pairs of digits taken from each number, left to right.
+
+    2. From right to left, for each sum of pairs of digits, if the sum
+       exceeds 15 then subtract 16 and carry a 1 to the next column
+
+  - What is /straight binary encoding/?  [fn::page 37]  ::
+
+       It is a way of representing numerical data in binary form, in
+       which the number is simply represented as the number in base 2.
+
+  - What is /binary-coded decimal/?  [fn::page 37]  ::
+
+       It is a way of representing numerical data in binary form, in
+       which the number uses at least 4 bits for each decimal digit.
+
+  - What is /Weighted 8-4-2-1 BCD/ code?  [fn::page 37]  :: 
+
+       It is a 4-bit binary-coded decimal representation in which the
+       bits are given, from left to right, the weights 8, 4, 2, and 1,
+       respectively.  These weights are just the /place values/ in the
+       binary system.  In this system, a decimal digit is encoded as
+       its binary representation.
+
+  - What is /Non-weighted XS-3 BCD/ code?  [fn::page 38]  :: 
+
+       The /excess-three/ BCD code for a decimal digit /d/ adds $3 =
+       0011_2$ to the 8-4-2-1 BCD code for /d/.  It encodes a pair of
+       nines complements as a pair of ones complements.
+
+  - What are some advantages of BCD codes over straight binary coding?  [fn::page 38]  ::
+
+    1. Conversion between decimal and BCD is simpler than between
+       decimal and straight binary coding.
+
+    2. There is no round-off error in BCD encoding, but there /may/ be
+       in straight binary coding.
+
+  - What are some advantages of straight binary coding over BCD codes?  [fn::page 38]  ::
+
+    1. Straight binary coding usually requires fewer bits to represent a number than do BCD codes.
+
+    2. Arithmetic is easier.
+
+  - What does /alphameric/ data mean?  [fn::page 39]  ::
+
+       Alphameric data consists of both numeric and non-numeric items.
+
+  - How many special characters can a 6-digit BCD code support?  [fn::page 39]  :: 
+
+       \[2^6 - 36 = 28\] special characters
+
+  - Describe 6-bit BCD codes.  [fn::page 39]  :: 
+
+       The 6-bit BCD code adds two bits, called /zone bits/ and
+       labeled /position B/ and /position A/, to the four 8-4-2-1 /numeric bits/, as shown:
+
+       #+CAPTION: 6-bit BCD Code
+       |---+---+---+---+---+---|
+       | / |   |<  |   |   |   |
+       | B | A | 8 | 4 | 2 | 1 |
+       |---+---+---+---+---+---|
+
+       Digits are coded with 0s for both zone bits and their 8-4-2-1
+       BCD code for the numeric bits (except for the digit 0, which is
+       coded as if it were a ten).  Alphabetical and special
+       characters are encoded by combinations of both zone bits and
+       numeric bits.
+
+  - What does /check bit/ or /parity bit/ mean?  [fn::page 39]  ::
+
+       A /check bit/ or /parity bit/ is a bit added to a 6-bit BCD
+       code to produce a 7-bit form, as shown:
+
+       #+CAPTION: 7-bit BCD Code
+       |---+---+---+---+---+---+---|
+       | / | < |   | < |   |   |   |
+       | C | B | A | 8 | 4 | 2 | 1 |
+       |---+---+---+---+---+---+---|
+
+       For each character, the value of the check bit (0 or 1) is such
+       as to make the sum of the bits, including the check bit, odd or
+       even, according as the machine operates on odd or even parity.
+
+  - Describe 8-bit BCD Codes.  [fn::page 40]  ::
+
+       The 8-bit BCD codes add two bits to 6-bit BCD codes, so that it
+       has 4 /zone bits/ in addition to the four 8-4-2-1 /numeric bits/, as shown:
+
+       #+CAPTION:  8-Bit BCD Code
+       |---+---+---+---+---+---+---+---|
+       | / |   |   |   | < |   |   |   |
+       | Z | Z | Z | Z | 8 | 4 | 2 | 1 |
+       |---+---+---+---+---+---+---+---|
+
+       This is typically called a byte.  Note that there is no /check
+       bit/ or /parity bit/.
+
+  - What are the two predominant 8-bit BCD codes in the computer industry today?  [fn::page 40]  ::
+
+    1. *EBCDIC*: The "Extended Binary-Coded Decimal Interchange
+       Code" was developed by IBM as an extension of the 6-bit BCD
+       code and is used mainly by IBM and IBM-compatible computer
+       systems.
+
+    2. *ASCII-8*: The "American Standard Code for Information
+       Interchange" was developed as a 7-bit standardization of
+       various special codes, and was then extended to an 8-bit code.
+       It is used mainly by non-IBM computer systems.  
+
+    In both coding systems, a digit encodes its binary representation
+    into the numerical portion of its code.
+
+  - What does /zoned decimal format/ mean?  [fn::page 42]  ::
+
+       EBCDIC uses a 4-bit group which occupies the zone portion of
+       the rightmost digit in order to encode the sign of a number.
+
+  - What does /packed decimal format/ mean?  [fn::page 42]  :: 
+
+       A converted form of an 8-bit zoned decimal format into a form
+       acceptable to a computer's arithmetic/logic unit, in which each
+       digit is encoded in 4-bit BCD, as is the sign placed at the end
+       of the number.
+
+  - What is the procedure for converting /zoned decimal format/ to /packed decimal format/?  [fn::page 43]  ::
+
+    1. The zone and numeric portions of the /rightmost byte/ are
+       interchanged, bringing the sign of the number to the end of
+       the format.
+
+    2. The other zone portions are deleted and the remaining numeric
+       portions are "packed" together.
+
+* Computer Arithmetic
+
+  - What do we mean by /significant digits/?  [fn::page 59]  ::
+
+       /Significant digits/ count the digits of an approximate number
+       /A/ that we have confidence in and measure its accuracy.
+
+  - What are the formal rules for significant digits?  [fn::page 59] :: 
+
+    1. A nonzero digit is always significant.
+
+    2. The digit 0 is significant if it lies between other significant
+       digits.
+
+    3. The digit 0 is never significant when it precedes all the
+       nonzero digits.
+
+  - What does the /most significant digit/ mean?  [fn::page 59]  ::
+
+       In a nonzero approximate number /A/ the /most significant
+       digit/ of /A/ is the first (leftmost) significant digit.  It
+       will always be the first nonzero digit in A.
+
+  - What does the /least significant digit/ mean?  [fn::page 59]  :: 
+
+       In a nonzero approximate number /A/ the /least significant
+       digit/ of /A/ is the last (rightmost) significant digit.
+       Typically, the least significant digit will be the last digit
+       in /A/, zero or not.
+
+  - What do we mean by the /precision/ of a computer?  [fn::page 60]  :: 
+
+       Of all decimal numbers that can be stored (in coded form) in a
+       /single/ memory location of a computer, the /precision/ refers
+       to the /M/ significant digits in the number that has the
+       greatest number of significant digits.
+
+  - What are the rules for /rounding/?  [fn::page 60]  :: 
+
+       In the following rules, "test digit" refers to the first
+       (leftmost) digit to be dropped.
+
+    1. *Rounding down*: If the test digit is smaller than 5, the
+       preceding digits are unchanged.
+
+    2. *Rounding up*: If the test digit is greater than 5 or is 5
+       followed by /at least one nonzero digit/, the preceding digit
+       is increased by 1 /with a carry of 1 if the preceding digit is
+       9/.
+
+    3. *Odd-add rule*: If the test digit is 5 with only 0s following,
+       the preceding digit is unchanged if even but increased by 1 if
+       odd.
+
+  - What is the maximum /round-off error/ under the rules for rounding?  [fn::page 60]  ::
+
+       The maximum /round-off error/ will be one-half the place value
+       of the last retained digit.
+
+  - What do we we mean by /truncating/ or /chopping/ of numerical values in a computer?  [fn::page 60]  :: 
+
+       /Truncating/ or /chopping/ refers to simply dropping the least
+       significant digits of an approximate number representation.
+
+  - What is the size of the /truncation error/ or /chop-off error/?  [fn::page 60]  :: 
+
+       The /truncation error/ or /chop-off error/ can be almost equal
+       to the full place value of the last retained digit.
+
+  - What is the /formal/ definition of the /absolute value/ of a number?  [fn::page 60] ::
+
+       \begin{equation*}
+       \lvert a \lvert =
+       \begin{cases}
+       a & (a > 0) \\
+       0 & (a = 0) \\
+       -a & (a < 0)
+       \end{cases}
+       \end{equation*}
+
+  - What is /exponential form/?  [fn::page 61]  ::
+
+       Expressing a number as a number times a power of ten.  Such
+       forms are not unique.
+
+  - What is /normalized exponential form/?  [fn::page 61]  :: 
+
+       /Normalized exponential form/ is a /unique/ representation of a
+       number as an exponential form, in which the decimal point
+       appears directly in front of the first nonzero digit.
+
+  - What does /mantissa/ refer to?  [fn::page 61]  :: 
+
+       The /mantissa/ is /M/ in the normalized exponential form of a
+       number $A = M \times 10^n$.
+
+  - What does the /exponent/ refer to?  [fn::page 61]  :: 
+
+       The /exponent/ is /n/ in the normalized exponential form of a
+       number $A = M \times 10^n$.
+
+  - What is /scientific notation/?  [fn::page 61]  :: 
+
+       /Scientific notation/ is a /unique/ exponential form in which
+       the decimal point appears directly /after/ the first nonzero
+       digit.
+
+  - What is the chief merit of /scientific notation/ over /normalized exponential form/?  [fn::page 61]  :: 
+
+       Brevity
+
+  - What do we mean by /word/ in a computer?  [fn::page 62]  :: 
+
+       A /word/ is a list of a fixed number of bits to be treated as a
+       single unit in the straight binary coding of a number.
+
+  - What do we mean by /word length/?  [fn::page 62]  :: 
+
+       The /word length/ is the number of bits in a /word/.  Computers
+       typically have word lengths of either 32 or 64.
+
+  - What do we mean by an /integer/ or /fixed-point number/ insofar as computers are concerned?  [fn::page 63]  :: 
+
+       /Integers/ or /fixed-point numbers/ are numbers that have no
+       decimal points.  An integer /J/ is represented in the memory of
+       the computer by its binary form if /J/ is positive, and by the
+       /2s complement/ of its absolute value if /J/ is negative.
+
+  - What do we mean by a /floating-point/ or /real/ number insofar as computers are concerned?  [fn::page 63]  :: 
+
+       /Floating-point/ or /real/ numbers have embedded decimal
+       points, and are stored and processed in their /binary
+       exponential forms, as follows.  
+
+    1. There are 3 /fields/, or blocks of bits.
+
+    2. The first field is a /sign bit/ (0 for + and 1 for -).
+
+    3. The second field is the exponent.
+
+    4. The third field is the mantissa.
+
+  - What are two ways of represent the integer exponent /n/ of a floating-point number?  [fn::page 63]  ::
+
+    1. as its binary form for /n > 0/ and its /2s complement/ when /n
+       < 0/.
+
+    2. as its /characteristic/ $n + 2^{t-1} where /t/ is the number of
+       bis in the exponent field.
+
+  - What range of exponents can be represented by a 7-bit exponent field?  [fn::page 64]  ::
+
+       -64 to 63
+
+  - What is the /characteristic/ for -61 in a 7-bit exponent field? :: 
+
+       0
+
+  - What is the /characteristic/ for 0 in a 7-bit exponent field? :: 
+
+       64
+
+  - What is the /characteristic/ for 63 in a 7-bit exponent field? :: 
+
+       127
+
+  - What is the main property of computer integer arithmetic?  [fn::page 64]  :: 
+
+       The result of any operation must be an integer, /as
+       represented in the computer/.  Thus, truncation and round-off
+       may occur, such that the ordinary rules of arithmetic do not
+       /generally/ hold.
+
+  - What is the procedure for /real addition/?  [fn::page 65]  ::
+
+    1. If two numbers to be added have the same exponent, the
+       mantissas are added and the same exponent is used.
+
+    2. If two number have different exponents, re-normalize the number
+       with the smaller exponent so that the two numbers have the same
+       exponent, then go to Step 1.
+
+    3. Re-normalize and truncate.
+
+  - What is the procedure for /real subtraction/  [fn::page 65]  ::
+
+    1. If two numbers to be added have the same exponent, the
+       mantissas are subtracted and the same exponent is used.
+
+    2. If two number have different exponents, re-normalize the number
+       with the smaller exponent so that the two numbers have the same
+       exponent, then go to Step 1.
+
+    3. Re-normalize and truncate.
+
+  - What is the procedure for /real multiplication/  [fn::page 65]  ::
+
+    1. Multiply the mantissas and /add/ the exponents.
+
+    2. Re-normalize and truncate.
+
+  - What is the procedure for /real division/  [fn::page 65]  ::
+
+    1. Divide the mantissas and /subtract/ the exponents.
+
+    2. Re-normalize and truncate.
+
+  - What do we mean by the /absolute error/ $e$ between $A$ and its approximation $\bar{A}$?  [fn::page 66]  ::
+
+       \[ e = A - \bar{A} \]
+
+  - What do we mean by the /relative error/ $r$ between $A$ and its approximation $\bar{A}$?  [fn::page 66]  ::
+
+       \[ r = \frac{e}{A} = \frac{A - \bar{A}}{A} \]
+
+  - What theorem governs /round-off/ and /truncation/ error?  [fn::page 66]  :: 
+
+    1. When $A$ is rounded to $P$ significant digits, then $\lvert r_A
+       \lvert < 0.5 \times 10^{-P+1}$.
+
+    2. When $A$ is truncated to $P$ significant digits, then $\lvert r_A
+       \lvert < 10^{-P+1}$.
+
+
+
+
+       
