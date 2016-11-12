@@ -1,0 +1,198 @@
+#+OPTIONS: toc:nil
+#+OPTIONS: tex:dvipng
+#+HTML_HEAD_EXTRA: <style type="text/css">
+#+HTML_HEAD_EXTRA: dd, dt {text-align: center;}
+#+HTML_HEAD_EXTRA: li {text-align: left;}
+#+HTML_HEAD_EXTRA: table {margin-left: auto; margin-right: auto;}
+#+HTML_HEAD_EXTRA: </style>
+
+#+TITLE:  Essential Computer Mathematics
+#+AUTHOR: David A. Ventimiglia
+#+EMAIL: dventimi@gmail.com
+
+* Chapter 1:  Binary Number System
+  - What does /bistable/ mean?  [fn::page 1]  ::
+
+       /Bistable/ refers to the way that many of the electronic
+       components in a computer can be in either of two states.
+
+  - What does /bit/ mean?  [fn::page 1]  ::
+
+       /Bit/ is short for "binary digit."
+
+  - What does /positional numeration system/ mean?  [fn::page 1]  :: 
+
+       A /positional numeration system/ requires only a finite number
+       of symbols, called /digits/ of the system, to represent
+       arbitrarily large numbers.
+
+  - What does /base/ or /radix/ mean in a positional number system?  [fn::page 1]  :: 
+
+       The /base/ or /radix/ in a positional number system is $b$, the
+       number of digits in the system.  Any number can be represented
+       as a sum of powers of $b$, where each power is weighted by one
+       of the digits.
+
+  - What does /expanded notation/ mean? [fn::page 1]  :: 
+
+       The expression of a positive integer $N$ as a sum of powers of
+       base $b$, with each power weighted by a digit.
+
+  - What do /place values/ mean?  [fn::page 1] :: 
+
+       The powers of base $b$ that correspond respectively to the
+       digits in a number expressed in a positional numeration system.
+
+  - What do /decimal places/ mean?  [fn::page 2] :: 
+
+       /Decimal places/ refer to the digits to the right of the
+       decimal point of a decimal fraction.
+
+  - What is the /binary system/?  [fn::page 3] :: 
+
+       The /binary system/ is the positional numeration system to the
+       base $b = 2$, with fractional numbers having a /binary point/
+       and non-fractional numbers being /binary integers/.
+
+  - What is a way to perform /binary-to-decimal conversion/ of a binary number $N_B$?  [fn::page 3] :: 
+
+       Write the number $N_B$ in expanded notation as the sum of each digit
+       times that digit's place value.
+
+  - What is a way to perform /decimal-to-binary conversion/ of a decimal number $N = N_I.N_F$?  [fn::page 4] :: 
+
+    1. Divide $N_I$ and each successive quotient by two, noting the
+       remainders.  The zero quotient ends the calculation.  Observe
+       that the remainders can only be 0 or 1.  The sequence of
+       remainders from last to first yields the binary equivalent of
+       $N_I$.
+
+    2. Multiply $N_F$ and each successive fractional part by 2, noting
+       the integral part of the product.  The 0 fractional part
+       indicates the end of the calculations.  Observe that the
+       integral part of any product can only be 0 or 1.  The sequence
+       of integral-part digits from first to last yields the binary
+       equivalent of $N_F$.
+
+    3. Be alert for a repeating pattern of bits, and indicate the
+       pattern by appending a set of ellipses ($\ldots$).
+
+    4. The binary equivalent of $N$ is simply the sum of the two
+       equivalents.
+
+       \[ N = N_I + N_F \]
+
+  - What is a way to perform /binary addition/ of two numbers?  [fn::page 7] ::
+
+    1. Add the first (rightmost) column.
+
+    2. Record the units digit of the column sum.  If the sum exceeds
+       9, carry the tens digit 1 to the next column.
+
+    3. If there are additional columns or if there is a carry from
+       Step 2, add the next column and repeate Step2.  Otherwise,
+       stop.
+
+  - What are the two numbers in a sum called?  [fn::page 7] ::
+
+       The first is called the /addend/.  The second is called the
+       /augend/.
+
+  - What are the basic properties of the addition algorithm of two numbers?  [fn::page 8] :: 
+
+       Any two numbers can be added if one merely knows two facts,
+       usually presented an /addition table/ or as /addition facts/.
+
+    1. the addition of any two digits, and
+
+    2. the addition of two digits and a carry of 1.
+
+  - What is the addition table and what are the addition facts of binary digits?  [fn::page 8] ::
+
+#+CAPTION: Binary Addition Table
+    |---+---+----|
+    | + | 0 |  1 |
+    |---+---+----|
+    | / | < |  < |
+    | 0 | 0 |  1 |
+    | 1 | 1 | 10 |
+    |---+---+----|
+
+#+CAPTION:  Binary Addition Facts
+    |----------------------------------|
+    | 0 + 0 = 0                        |
+    | 0 + 1 = 1                        |
+    | 1 + 0 = 1                        |
+    | 1 + 1 = 0, with a carry of 1     |
+    | 1 + 1 + 1 = 1, with a carry of 0 |
+    |----------------------------------|
+
+  - What is a way to perform /binary multiplication/ of two numbers?  [fn::page 10] ::
+
+    1. Line up the numbers /very carefully/.
+
+    2. Multiply pairs of digits one pair at a time from right to left,
+       applying the /binary addition facts/.
+
+  - What is a simple way to perform /binary subtraction/ of two numbers?  [fn::page 10] ::
+
+    1. Line up the numbers /very carefully/.
+
+    2. If the lower (/subtrahend/) digit is greater than the upper
+       (/minuend/) digit, borrow from the next column to the left.
+
+    3. Subtract the lower value from the upper value.
+
+  - What are the subtraction facts of binary digits?  [fn::page 12] ::
+
+#+CAPTION:  Binary Subtraction Facts
+|----------------------------------------------------|
+| 0 - 0 = 0                                          |
+| 1 - 0 = 1                                          |
+| 1 - 1 = 0                                          |
+| 0 - 1 = 1, with a borrow of 1 from the next column |
+|----------------------------------------------------|
+
+  - What two separate but related situations in computer mathematics involve /complements/?  [fn::page 14] ::
+
+    1. Complements are involved in storing numbers in the computer,
+       since many computers store negative numbers in the form of
+       their arithmetic complements.
+
+    2. Complements arise in the operation of subtraction, by reducing
+       subtraction to addition.  This is useful because it avoids the
+       possibility of repeated borrowings from one column to another.
+
+  - What are two types of complements?  [fn::page 14] ::
+
+    1. /Radix-minus-one complement/: Subtract each digit from the
+       base.
+
+    2. /Radix complement/ (or simply /complement/): Add 1 to the
+       radix-minus-one complement.
+
+  - In a calculator that has registers of a fixed number of digits, what happens if addition yields extra digits?  [fn::page 15] ::
+
+       The extra digits, i.e. the most significant digits (leading
+       digits) typically are just dropped.
+
+  - What does /overflow/ mean?  [fn::page 16] ::
+
+       /Overflow/ is that part of the result of an operation which is
+       lost because the resulting value exceeds the capacity of the
+       intended storage location.
+
+  - What are the two circumstances for overflow in subtraction?  [fn::page 16] ::
+
+    1. When the subtrahend is less than the minuend and we are adding
+       the complement of the subtrahend to the minuend.  Then we drop
+       the most significant digits.
+
+    2. When the minuend is less than the subtrahend and we are adding
+       the complement of the subtrahend to the minuend.  Then we take
+       the complement of the result.
+
+  - What is a simple way to find the complement of a binary number?  [fn::page 16] ::
+
+       Simply invert each digit.  I.e. 0 is replaced by 1 and 1 is
+       replaced by 0.
