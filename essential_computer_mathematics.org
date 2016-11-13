@@ -91,7 +91,7 @@
        9, carry the tens digit 1 to the next column.
 
     3. If there are additional columns or if there is a carry from
-       Step 2, add the next column and repeat Step2.  Otherwise,
+       Step 2, add the next column and repeat Step 2.  Otherwise,
        stop.
 
   - What are the two numbers in a sum called?  [fn::page 7] ::
