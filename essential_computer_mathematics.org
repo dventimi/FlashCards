@@ -636,13 +636,299 @@
 
   - What theorem governs /round-off/ and /truncation/ error?  [fn::page 66]  :: 
 
+       *Theorem*:
+
     1. When $A$ is rounded to $P$ significant digits, then $\lvert r_A
        \lvert < 0.5 \times 10^{-P+1}$.
 
     2. When $A$ is truncated to $P$ significant digits, then $\lvert r_A
        \lvert < 10^{-P+1}$.
 
+* Logic, Truth Tables
 
+  - What is a /statement/?  [fn::page 76]  ::
 
+       A /statement/ is a meaningful declarative sentence that is
+       either true or false.
+
+  - What is /truth value/?  [fn::page 76]  :: 
+
+       /Truth value/ is the truth or falsity of a /statement/.
+
+  - What is a /compound statement/?  [fn::page 76]  :: 
+
+       A /compound statement/ is one composed of sub-statements and
+       various /connectives/.  
+
+  - What is the fundamental property of a compound statement?  [fn::page 76]  :: 
+
+       The fundamental property of a compound statement is that the
+       truth value is completely determined by the /truth table/ of
+       its sub-statements together with the way in which they are
+       connected to form the compound statement.
+
+  - What is a /connective/?  [fn::page 76]  :: 
+
+       A /connective/ a word, such as "and" and "or", which connects
+       two statements into a /conjunction/.
+
+  - What is a /conjunction/?  [fn::page 76]  :: 
+
+       A /conjunction/ is a compound statement composed of two
+       /statements/ combined by one /connective/ "and".  It is
+       represented symbolically by
+
+       \[ p \land q \], \[ p \& q \], \[ p \cdot q \], or just \[ pq
+       \]
+
+       It has this /truth table/.
+
+       |------------------+------------------+--------------------------|
+       | $\boldsymbol{p}$ | $\boldsymbol{q}$ | $\boldsymbol{p \land q}$ |
+       |------------------+------------------+--------------------------|
+       | /                | <                | <                        |
+       | <c>              | <c>              | <c>                      |
+       | T                | T                | T                        |
+       | T                | F                | F                        |
+       | F                | T                | F                        |
+       | F                | F                | F                        |
+       |------------------+------------------+--------------------------|
+
+  - What is a /disjunction/?  [fn::page 77]  ::
+
+       A /disjunction/ is a compound statement composed of two
+       /statements/ combined by the one /conjunction/ "or".  It is
+       represented symbolically by
+
+       \[ p \lor q \] or \[ p + q \]
+
+       and has the /truth table/
+
+       |------------------+------------------+-------------------------|
+       | $\boldsymbol{p}$ | $\boldsymbol{q}$ | $\boldsymbol{p \lor q}$ |
+       |------------------+------------------+-------------------------|
+       | /                | <                | <                       |
+       | <c>              | <c>              | <c>                     |
+       | T                | T                | T                       |
+       | T                | F                | T                       |
+       | F                | T                | T                       |
+       | F                | F                | F                       |
+       |------------------+------------------+-------------------------|
+
+  - What is an /exclusive disjunction/?  [fn::page 77]  ::
+
+       An /exclusive disjunction/ is a disjunction when exactly /one/
+       of the alternatives occurs.
+
+  - What method do we /adopt/ for defining precisely the /truth value/ of a compound statement?  [fn::page 76]  ::
+
+       The /truth table/ defines precisely the truth value of a
+       compound statement.
+
+  - What is /negation/?  [fn::page 77]  :: 
+
+       A /negation/ statement reverses the /truth value/ of the
+       corresponding non-negated statement.  It is represented
+       symbolically by
+
+       \[ \sim p \], \[ p' \], \[ \bar{p} \], or \[ \lnot p \]
+
+       and its /truth table/ is 
+
+       |------------------+-------------------|
+       | $\boldsymbol{p}$ | $\boldsymbol{\sim p}$ |
+       |------------------+-------------------|
+       | /                | <                 |
+       | <c>              | <c>               |
+       | T                | F                 |
+       | F                | T                 |
+       |------------------+-------------------|
+
+  - What is a /proposition/?  [fn::page 78]  ::
+
+       A /proposition/ is a compound statement /P(p, q, ...)/ in which
+       the sub-statement /p/, /q/, ... are variables.
+
+  - What does the truth value of a proposition depend on?  [fn::page 78]  :: 
+
+       The truth value of a proposition depends exclusively upon the
+       truth values of its variables.
+
+  - What is a /tautology/?  [fn::page 79]  ::
+
+       A /tautology/ is a proposition that contains only /T/ in the
+       last column of its truth table.  Put another way, it is an
+       unfalsifiable proposition.
+
+  - What is a /contradiction/?  [fn::page 79]  :: 
+
+       A /contradiction/ is a proposition that contains only /F/ in
+       the last column of its truth table.  Put another way, it is an
+       unverifiable proposition.
+
+  - What is the /Principle of Substitution/?  [fn::page 80]  :: 
+
+       If /P(p, q, ...)/ is a tautology, then /P(P_1, P_2, ...)/ is a
+       tautology for any propositions /P_1/, /P_2/, ...
+
+  - What is /logical equivalence/?  [fn::page 80]  :: 
+
+       Two propositions /P(p, q, ...)/ and /Q(p, q, ...)/ are said to
+       be /logically equivalent/---or simply /equivalent/ or
+       /equal/---if they have identical truth tables.  We denote it by
+
+       \[ P(p, q, ...) \equiv Q(p, q, ...) \]
+
+  - What are the /Idempotent Laws/ in the Algebra of Propositions?  [fn::page 81]  :: 
+
+       \[ p \lor p \equiv p \]
+
+       \[ p \land p \equiv p \]
+
+  - What are the /Associative Laws/ in the Algebra of Propositions?  [fn::page 81]  ::
+
+       \[ (p \lor q) \lor r \equiv p \lor (q \lor r) \]
+
+       \[ (p \land q) \land r \equiv p \land (q \land r) \]
+
+  - What are the /Commutative Laws/ in the Algebra of Propositions?  [fn::page 81]  ::
+
+       \[ p \lor q \equiv q \lor p \]
+
+       \[ p \land q \equiv q \land p \]
+
+  - What are the /Distributive Laws/ in the Algebra of Propositions?  [fn::page 81]  :: 
+
+       \[ p \lor (q \land r) \equiv (p \lor q) \land (p \lor r) \]
+
+       \[ p \land (q \lor r) \equiv (p \land q) \lor (p \land r) \]
+
+  - What are the /Identity Laws/ in the Algebra of Propositions?  [fn::page 81]  :: 
+
+       \[ p \lor f \equiv p \]
+
+       \[ p \lor t \equiv t \]
+
+       \[ p \land t \equiv p \]
+
+       \[ p \land f \equiv f \]
+
+       Note that /t/ denotes a tautology and /f/ denotes a
+       contradiction.
+
+  - What are the /Complement Laws/ in the Algebra of Propositions?  [fn::page 81]  ::
+
+       \[ p \lor \sim p \equiv t \]
+
+       \[ \sim t \equiv f \]
+
+       \[ p \land \sim p \equiv f \]
+
+       \[ \sim f \equiv t \]
+
+       Note that /t/ denotes a tautology and /f/ denotes a
+       contradiction.
+
+  - What is the /Involution Law/ in the Algebra of Propositions?  [fn::page 81]  :: 
+
+       \[ \sim \sim p \equiv p \]
+
+  - What are /DeMorgan's Laws/ in the Algebra of Propositions?  [fn::page 81]  :: 
+
+       \[ \sim(p \lor q) \equiv \sim p \land \sim q \]
+
+       \[ \sim(p \land q) \equiv \sim p \lor \sim q \]
+
+  - What is a /conditional/?  [fn::page 80]  :: 
+
+       A conditional is a statement of the form "If /p/ then /q/",
+       "/p/ implies /q/", or "/p/ only if /q/", and is denoted by
+
+       \[ p \to q \]
+
+  - What is a /biconditional/?  [fn::page 80]  :: 
+
+       A biconditional is a conditional of the form "/p/ if and only
+       if /q/", and is denoted by
+
+       \[ p \leftrightarrow q \]
+
+  - What is a logical equivalence for $p \to q$?  [fn::page 81]  ::
+
+       \[ p \to q \equiv \sim p \lor q \]
+
+  - What is the /converse/ of the proposition $p \to q$?  [fn::page 82]  :: 
+
+       \[ q \to p \]
+
+  - What is the /inverse/ of the proposition $p \to q$?  [fn::page 82]  :: 
+
+       \[ \sim p \to \sim q \]
+
+  - What is the /contrapositive/ of the proposition $p \to q$?  [fn::page 82]  :: 
+
+       \[ \sim q \to \sim p \]
+
+  - What theorem relates a conditional statement and its contrapositive?  [fn::page 82]  :: 
+
+       *Theorem*: A conditional statement $p \to q$ and its
+       contrapositive $\sim q \to \sim p$ are logically equivalent.
+
+  - What is an /argument/?  [fn::page 82]  :: 
+
+       An argument is a relationship betwen a set of propositions
+       /P_1/, /P_2/, ..., /P_n/ called /premises/, and another
+       proposition /Q/, called the /conclusion/; we denote an argument
+       by
+
+       \[ P_1, P_2, \ldots, P_n \vdash Q \]
+
+  - What does /valid/ mean?  [fn::page 82]  :: 
+
+       *Definition*: An argument $P_1, P_2, \ldots, P_n \vdash Q$ is
+       /valid/ if $Q$ is true whenever all the premises $P_1, P_2,
+       \ldots, P_n$ are true.
+
+  - What is a /fallacy/?  [fn::page 82]  ::
+
+       A fallacy is an argument that is not valid.
+
+  - What is the /Law of Detachment/?  [fn::page 82]  :: 
+
+       \[ p, p \to q \vdash q \]
+
+  - What is an important theorem about an argument's validity?  [fn::page 83]  :: 
+
+       *Theorem*: The argument $P_1, P_2, \ldots, P_n \vdash Q$ is
+       valid if and only if $(P_1 \land P_2 \land \ldots \land P_n)
+       \to Q$ is a tautology.
+
+  - What is a the /Law of Syllogism/?  [fn::page 83]  ::
+
+       \[ p \to q, q \to r \vdash p\to r \]
+
+  - On what dos the validity of an argument depend?  [fn::page 83]  :: 
+
+       The validity of an argument depends exclusively upon the formal
+       structure of the argument.
+
+  - What is /logical implication/?  [fn::page 84]  :: 
+
+       A proposition /P(p, q, ...)/ logically implies a proposition
+       /Q(p, q, ...)/ if /Q(p, q, ...)/ is true whenever /Q(p, q,
+       ...)/.  We write this as
+
+       \[ P(p, q, \ldots) \Rightarrow Q(p, q, ...) \]
+
+  - What important theorem governs logical implication?  [fn::page 84]  :: 
+
+       *Theorem*: For any propositions $P(p, q, \ldots)$ and $Q(p, q,
+       \ldots)$, the following three statements are equivalent.
+
+    1. $P(p, q, \ldots)$ logically implies $Q(p, q, \ldots)$.
+
+    2. The argument $P(p, q, \ldots) \vdash Q(p, q, \ldots)$ is valid.
+
+    3. The proposition $P(p, q, \ldots) \to Q(p, q, \ldots)$ is a tautology.
 
        
