@@ -6,6 +6,8 @@
 #+HTML_HEAD_EXTRA: li {text-align: left;}
 #+HTML_HEAD_EXTRA: table {margin-left: auto; margin-right: auto;}
 #+HTML_HEAD_EXTRA: </style>
+#+LATEX_HEADER: \usepackage{mathrsfs}
+#+LATEX_HEADER: \usepackage{cancel}
 
 #+TITLE:  Essential Computer Mathematics
 #+AUTHOR: David A. Ventimiglia
@@ -848,7 +850,7 @@
 
   - What is a /biconditional/?  [fn::page 80]  :: 
 
-       A biconditional is a conditional of the form "/p/ if and only
+       A bi-conditional is a conditional of the form "/p/ if and only
        if /q/", and is denoted by
 
        \[ p \leftrightarrow q \]
@@ -876,7 +878,7 @@
 
   - What is an /argument/?  [fn::page 82]  :: 
 
-       An argument is a relationship betwen a set of propositions
+       An argument is a relationship between a set of propositions
        /P_1/, /P_2/, ..., /P_n/ called /premises/, and another
        proposition /Q/, called the /conclusion/; we denote an argument
        by
@@ -931,4 +933,480 @@
 
     3. The proposition $P(p, q, \ldots) \to Q(p, q, \ldots)$ is a tautology.
 
+* Algorithms, Flowcharts, Pseudocode Programs
+
+  - What is an /algorithm/?  [fn::page 95]  ::
+
+       An algorithm is a step-by-step list of instructions for solving
+       a particular problem.
+
+* Sets and Relations
+
+  - What is a /set/?  [fn::page 132]  ::
+
+       A set is a collection of distinct objects, the /elements/ or
+       /members/ of the set.  The statement "/p/ is an element of
+       /A/," or, equivalently, "/p/ belongs to /A/," is written
+
+       \[ p \in A \]
+
+       The negation of $p \in A$ is written $p \notin A$.
+
+  - What is the /Principle of Extension/?  [fn::page 132]  ::
+
+       *Principle of Extension*: Two sets /A/ and /B/ are equal if and
+       only if they have the same members.
+
+  - What are two ways to specify a particular set?  [fn::page 132]  :: 
+
+    1. If possible and practical, list its members.  For example,
+
+       \[ A = \{a, e, i, o, u\} \]
+
+    2. Otherwise, state the properties that characterize the elements
+       in the set.  For example,
+
+       \[ B = \{x : x \text{ is an integer}, x > 0\} \]
+
+  - What is the /Principle of Abstraction/?  [fn::page 133]  ::
+
+       *Principle of Abstraction*: Given any set /U/ and any property
+       /P/, there is a set /A/ such that the elements of /A/ are
+       exactly those members of /U/ which have the property /P/.
+
+  - What is the /universal set/ or the /universe of discourse/?  [fn::page 133]  :: 
+
+       The universal set or the universe of discourse contains the
+       members of all the sets that are under investigation.
+       Typically, it is denoted by the letter /U/.
+
+  - What is the /empty set/ or the /null set/?  [fn::page 133]   :: 
+
+       The empty set or the null set is the set with no members.
+       Typically, it is denoted by $\emptyset$.
+
+  - How is a /subset/ defined?  [fn::page 133]  :: 
+
+       If every element of a set /A/ is also an element of a set /B/,
+       then /A/ is called a subset of /B/.  This relationship is
+       written as
+
+       \[ A \subset B \]
+
+       If /A/ is not a subset of /B/, then at least one element of
+       /A/ does not belong to /B/.  This relationship is written as
+
+       \[ A \not\subset B \]
+
+  - What important theorem applies to subsets?  [fn::page 134]  ::
+
+    1. For any set $A$, we have $\emptyset \subset A \subset U$.
+
+    2. For any set $A$, we have $A \subset A$.
+
+    3. If $A \subset B$, and $B \subset C$, then $A \subset C$.
+
+    4. $A = B$ if and only if $A \subset B$ and $B \subset A$.
+
+  - What does /disjoint/ mean?  [fn::page 134] :: 
+
+       Two sets $A$ and $B$ are disjoint if they have no elements in
+       common.
+
+  - What is the definition of the /union/ of two sets.  [fn::page 136]  ::
+
+       The union of two sets $A$ and $B$, denoted by $A \cup B$, is
+       the set of all elements which belong to $A$ or to $B$.
+
+       \[ A \cup B = \{ x : x \in A \text{ or } x \in B \} \]
+
+  - What is the definition of the /intersection/ of two sets.  [fn::page 136]  :: 
+
+       The intersection of two sets $A$ and $B$, denoted by $A \cap
+       B$, is the set of all elements which belong to both $A$ or $B$.
+
+       \[ A \cup B = \{ x : x \in A, x \in B \} \]
+
+  - What theorem relates set union and intersection?  [fn::page 136]  :: 
+
+       *Theorem*:  The following are equivalent.
+
+       \[ A \subset B \]
+
+       \[ A \cap B = A \]
+
+       \[ A \cup B = B \]
+
+       \[ A \subset B \leftrightarrow A \cap B = A \]
+
+  - What is the definition of the /absolute complement/ or simply /complement/?  [fn::page 136]  :: 
+
+       The absolute complement, or simply, complement of a set $A$,
+       denoted by $A^c$, is the set of elements which belong to $U$
+       but which do not belong to $A$:
+
+       \[ A^c = \{ x : x \in U, x \not\in A \} \]
+
+       Note that the following notations are equivalent for the
+       complement of $A$: $A^c$, $A'$, $\bar{A}$.
+
+  - What is the /relative complement/?  [fn::page 137]  :: 
+
+       The relative complement of a set $B$ with respect to set $A$
+       or, simply, the /difference/ of $A$ and $B$, denoted by $A
+       \setminus B$, is the set of elements which belong to $A$ but
+       which do not belong to $B$:
+
+       \[ A \setminus B = \{ x : x \in A, x \not\in B \} \]
+
+       Note that the following notations are equivalent for the
+       relative complement of $B$ with respect to $A$: $A \setminus
+       B$, $A - B$, $A \sim B$.
+
+  - What are the /Idempotent Laws/ in the Algebra of Sets?  [fn::page 138]  ::
+
+       \[ A \cup A = A \]
+
+       \[ A \cap A = A \]
+
+  - What are the /Associative Laws/ in the Algebra of Sets?  [fn::page 138]  :: 
+
+       \[ (A \cup B) \cup C = A \cup (B \cup C) \]
+
+       \[ (A \cap B) \cap C = A \cap (B \cap C) \]
+
+  - What are the /Commutative Laws/ in the Algebra of Sets?  [fn::page 138]  :: 
+
+       \[ A \cup B = B \cup A \]
+
+       \[ A \cap B = B \cap A \]
+
+  - What are the /Distributive Laws/ in the Algebra of Sets?  [fn::page 138]  :: 
+
+       \[ A \cup (B \cap C) = (A \cup B) \cap (A \cup C) \]
+
+       \[ A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \]
+
+  - What are the /Identity Laws/ in the Algebra of Sets?  [fn::page 138]  :: 
+
+       \[ A \cup \emptyset = A \]
+
+       \[ A \cup U = U \]
+
+       \[ A \cap U = A \]
+
+       \[ A \cap \emptyset = \emptyset \]
+
+  - What is the /Involution Law/ in the Algebra of Sets?  [fn::page 138]  :: 
+
+       \[ (A^c)^c = A \]
+
+  - What are the /Complement Laws/ in the Algebra of Sets?  [fn::page 138]  :: 
+
+       \[ A \cup A^c = U \]
+
+       \[ U^c = \emptyset \]
+
+       \[ A \cap A^c = \emptyset \]
+
+       \[ \emptyset^c = U \]
+
+  - What are /DeMorgan's Laws/ in the Algebra of Sets?  [fn::page 138]  ::
+
+       \[ (A \cup B)^c = A^c \cap B^c \]
+
+       \[ (A \cap B)^c = A^c \cup B^c \]
+
+  - What is meant by the /dual/ of a set expression $E$ ?  [fn::page 138]  :: 
+
+       The dual $E^*$ of $E$ is the expression obtained by replacing
+       each occurrence of $\cup$, $\cap$, $U$, and $\emptyset$ in $E$
+       by $\cap$, $\cup$, $\emptyset$, and $U$ respectively.
+
+  - What is the /principal of duality/?  [fn::page 138]  :: 
+
+       The principle of duality expresses the fact of set algebra that
+       if $E$ is an identity then its dual $E^*$ is also an identity.
+
+  - What is a /finite/ set?  [fn::page 138]  :: 
+
+       A set is said to be finite if it contains /exactly/ $m$
+       distinct elements where $m$ denotes some non-negative integer.
+
+       Note that if a set $A$ is finite, then $n(A)$ or $\#(A)$
+       denotes the number of elements in the set.  This is also known
+       as the set's /cardinality/.
+
+  - What is an /infinite/ set?  [fn::page 138]  :: 
+
+       A set is said to be infinite if it is not finite.
+
+  - What lemma relates disjoint finite sets?  [fn::page 139]  :: 
+
+       *Lemma*: If $A$ and $B$ are disjoint finite set, then $A \cup
+       B$ is finite and
+
+       \[ n(A \cup B) = n(A) + n(B) \]
+
+  - What theorem relates finite sets?  [fn::page 139]  :: 
+
+       *Theorem*: If $A$ and $B$ are finite sets, the $A \cup B$ and
+       $A \cap B$ are finite and
+
+       \[ n(A \cup B) = n(A) + n(B) - n(A \cap B) \]
+
+  - What corollary of this theorem extends it to $k = 3$ sets?  [fn::page 139]  :: 
+
+       \[ n(A \cup B \cup C) = n(A) + n(B) + n(C) - n(A \cap B) - n(A
+       \cap C) - n(B \cap C) + n(A \cap B \cap C) \]
+
+  - What is a /class/ of sets or a /collection/ of sets?  [fn::page 140]  :: 
+
+       A class of or collection of sets is just a set of sets.
+
+  - What is a /power set/?  [fn::page 140]  :: 
+
+       For a given set $S$, the power set $\mathscr{P}(S)$ is the set
+       of all subsets of $S$.  It always includes the set $S$ itself
+       as well as the empty set $\emptyset$.  It is sometimes denoted
+       by $2^S$.
+
+  - How many elements does the power set $\mathscr{P}(S)$ have?  [fn::page 140]  ::
+
+       \[ 2^{n(S)} \]
+
+       where $n(S)$ is the cardinality of $S$.
+
+  - What is a /partition/ of a set /S/?  [fn::page 140]  ::
+
+       A partition of $S$ is a collection $\{A_i\}$ of nonempty
+       subsets of $S$ such that:
+
+    1. Each $a$ in $S$ belongs to /exactly one/ of the $A_i$.
+
+    2. The sets of $\{A_i\}$ are mutually disjoint; that is, if
+
+       \[ A_i \not= A_j \text{ then } A_i \cap A_j = \emptyset \]
+
+  - What are partition /cells/?  [fn::page 141]  ::
+
+       Cells are the subsets in a partition.
+
+  - What is an /ordered pair/?  [fn::page 141]  :: 
+
+       An ordered pair consists of two elements, one of which is
+       designated as the first element and the other as the second
+       element.  Such an ordered pair is written $(a, b)$ where $a$ is
+       the first element and $b$ is the second element.
+
+  - When are two ordered pairs equal?  [fn::page 141]  :: 
+
+       Two ordered pairs $(a, b)$ and $(c, d)$ are equal if and only
+       if $a = c$ and $b = d$.
+
+  - What is the /Cartesian product/?  [fn::page 141]  ::
+
+       The Cartesian product, or just product, of two sets $A$ and $B$
+       is the set of all ordered pairs $(a, b)$ where $a \in A$ and $b
+       \in B$.  It is written as $A \times B$.  Its definition is
+
+       \[ A \times B = \{(a, b) : a \in A, b \in B \} \]
+
+       A Cartesian product of a set $A$ onto itself may be written as
+       $A^2$ or as $A \times A$.
+
+  - What is the cardinality of a Cartesian product?  [fn::page 142]  :: 
+
+       \[ n(A \times B) = n(A) \cdot n(B) \]
+
+  - What is the /product/ of a finite number of sets?  [fn::page 142]  ::
+
+       For any sets $A_1$, $A_2$, ..., $A_n$, the set of all ordered
+       /n/-tuples $(a_1, a_2, \ldots, a_n)$ where $a_1 \in A_1$, $a_2
+       \in A_2$, ..., $a_n \in A_n$ is called the product of the sets
+       $A_1$, $A_2$, ..., $A_n$ and is denoted by
+
+       \[ A_1 \times A_2 \times \ldots \times A_n \]
+
+       or
+
+       \[ \prod_{i=1}^n A_i \]
+
+  - What is the set of positive integers?  [fn::page 134]  :: 
+
+       \[\boldsymbol{N}\]:  1, 2, 3, ...
+
+  - What is the set of integers?  [fn::page 134]   :: 
+
+       \[\boldsymbol{Z}\]:  ..., -2, -1, 0, 1, 2, ...
+
+  - What is the set of rational numbers?  [fn::page 134]  :: 
+
+       \[\boldsymbol{Q}\]
+
+  - What is the set of real numbers?  [fn::page 134]  :: 
+
+       \[\boldsymbol{R}\]
+
+  - What is the /Cartesian plane/?  [fn::page 141]  :: 
+
+       The Cartesian plane is the product of the set of real numbers
+       $\boldsymbol{R}$ onto itself, $\boldsymbol{R}^2$.
+
+  - How do we represent /n/-dimensional space in terms of the set of real numbers?  [fn::page 142]  :: 
+
+       \[\boldsymbol{R}^n\]
+
+  - What is a /binary relation/?  [fn::page 142]  :: 
+
+       A binary relation (or just "relation"), $R$, /from/ $A$ /to/
+       $B$ assigns to each ordered pair $(a, b)$ in $A \times B$
+       exactly one of the following statements.
+
+    1. "$a$ is related to $b$", written $a R b$.
+
+    2. "$a$ is not related to $b$", written $a \cancel{R} b$.
+
+  - What is a formal definition of a /relation/?  [fn::page 142]  ::
+
+       *Definition*: A relation $R$ from $A$ to $B$ is a subset of $A
+       \times B$.
+
+  - What does /domain/ mean?  [fn::page 143]  :: 
+
+       The domain of a relation $R$ is the set of all first elements
+       of the ordered pairs which belong to $R$.
+
+  - What does /range/ mean?  [fn::page 143]  :: 
+
+       The range of a relation $R$ is the set of all second elements
+       of the ordered pairs which belong to $R$.
+
+  - What does /inverse/ mean?  [fn::page 143]  :: 
+
+       Let $R$ be any relation from $A$ to $B$.  The inverse of a
+       relation $R$, denoted by $R^{-1}$, is the relation from $B$ to
+       $A$ which consists of those ordered pairs which when reversed
+       belong to $R$:
+
+       \[ R^{-1} = \{(b, a) : (a, b) \in R\} \]
+
+  - What is the inverse of the inverse of a relation $R$ ? [fn::page 143]  :: 
+
+       \[ (R^{-1})^{-1} = R \]
+
+  - What are the correspondences among the domains and ranges of a relation $R$ and its inverse $R^{-1}$  [fn::page 143]  ::
+
+       The domain of $R^{-1}$ equals the range of $R$, and the range
+       of $R^{-1}$ equals the domain of $R$.
+
+  - What is a /graph/ of a relation?  [fn::page 143] :: 
+
+       A graph of a relation is a pictorial representation of the
+       relation.
+
+  - What are some ways of picturing a relation?  [fn::page 144]  :: 
+
+    1. coordinate diagram
+
+    2. matrix
+
+    3. arrow diagram
+
+    4. directed graph
+
+  - What is an /equivalence relation/?  [fn::page 145]  ::
+
+       A relation $\sim$ on a set $S$ is called an equivalence
+       relation if it has the following three properties:
+
+    1. For each $a$ in $S$, we have $a \sim a$.  (/reflexivity/)
+
+    2. If $a \sim b$, then $b \sim a$.  (/symmetry/)
+
+    3. If $a \sim b$ and $b \sim c$, then $a \sim c$.  (/transitive/)
+
+  - What is the /congruent modulo/ relation $m$ ?  [fn::page 145]  ::
+
+       $a \equiv b (\text{mod} m)$ 
        
+       if $m$ divides $a - b$.
+
+  - What is an /equivalence class/?  [fn::page 146]  ::
+
+       For an equivalence relation $\sim$ on a set $S$, the
+       equivalence class is the set of all elements $[a]$ to which
+       elements $a$ of $S$ are related.
+
+       \[ [a] = \{ x : a \sim x \} \]
+
+  - What is the /quotient/ of a set by an equivalence relation?  [fn::page 146]  :: 
+
+       The quotient of $S$ by $\sim$ is the collection of all
+       equivalence classes of $S$, denoted by $S/\sim$.
+
+  - What theorem expresses the fundamental property of a quotient set?  [fn::page 146]  ::
+
+       *Theorem*: Let $\sim$ be an equivalence relation on a set $S$.
+       Then the quotient set $S/\sim$ is a partition of $S$.
+       Specifically:
+
+    1. For each $a$ in $S$, we have $a \in [a].
+
+    2. $[a] = [b]$ if and only if $a \sim b$.
+
+    3. If $[a] \not= [b]$, then $[a]$ and $[b]$ are disjoint.
+
+  - Informally, what is a /function/?  [fn::page 146]  ::
+
+       A function assigns to each element of the domain $A$ a unique
+       element of the codomain $B$, and comprises the collection of
+       such assignments.  If we denote a function with $f$ then we
+       write
+
+       \[ f : A \to B \]
+
+       This is read "f is a function from $A$ into $B$" or "f takes
+       (or maps) $A$ into $B$."
+
+  - What is the /image/ or /value/ of an element under a function $f$ at $a$ ?  [fn::page 146]  :: 
+
+       If $a \in A$ then $f(a)$ (read "/f/ of /a/") denotes the unique
+       element of $B$ which $f$ assigns to $a$, and is called the
+       image of $a$ under $f$, or the value of $f$ at $a$.
+
+  - What is the /range/ or /image/?  [fn::page 146]  ::
+
+       The range or image is the set of all image values of $f$.
+
+  - What is a function /variable/?  [fn::page 147]  :: 
+
+       A variable is a placeholder within a mathematical formula that
+       expresses a function.
+
+  - What is the /graph/ of a function?  [fn::page 147]  :: 
+
+       The graph of a function $f : A \to B$ is the relation that
+       arises from the function:
+
+       Graph of $f$ = $\{(a, b) : a \in A, b \in f(a)\}$
+
+  - What makes two functions equal?  [fn::page 147]  :: 
+
+       Two functions $f : A \to B$ and $g : A \to B$ are equal,
+       written $f=g$, if $f(a) = g(a)$ for every $a \in A$.  That is,
+       they have the same graph.
+
+  - What is the formal definition for a function?  [fn::page 147]  :: 
+
+       *Definition*: A function $f : A \to B$ is a relation from $A$
+       to $B$ (i.e., a subset of $A \times B$) such that each $a \in
+       A$ belongs to a unique ordered pair $(a, b)$ in $f$.
+
+  - What defining condition of a function translates into a geometrical condition on the pictorial representation of its graph?  [fn::page 147]  :: 
+
+       No two points of this graph shall lie on the same vertical
+       line.
+
+#  LocalWords:  sim lnot DeMorgan's leftrightarrow vdash Rightarrow
+#  LocalWords:  notin emptyset setminus usepackage mathrsfs mathscr
