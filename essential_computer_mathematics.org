@@ -1408,5 +1408,21 @@
        No two points of this graph shall lie on the same vertical
        line.
 
+* Boolean Algebra, Logic Gates
+
+* Simplification of Logic Circuits
+
+* Vectors, Matrices, Subscripted Variables
+
+* Linear Equations
+
+* Combinatorial Analysis
+
+* Probability
+
+* Statistics; Random Variables
+
+* Graphs, Directed Graphs, Machines
+
 #  LocalWords:  sim lnot DeMorgan's leftrightarrow vdash Rightarrow
 #  LocalWords:  notin emptyset setminus usepackage mathrsfs mathscr
