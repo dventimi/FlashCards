@@ -1444,8 +1444,8 @@
 
   - What does /endpoint/ mean?  [fn::page 319]  :: 
 
-       An endpoint is the pictorial representation of a vertex in a
-       pictorial representation of a graph.
+       An /endpoint/ is an end of an edge.  An edge has two endpoints,
+       though the endpoints may correspond to the same vertex.
 
   - What is a /multigraph/?  [fn::page 319]  :: 
 
@@ -1673,10 +1673,269 @@
        The /weight/ or /length/ $\mathscr{L}(e)$ of an edge $e$ in
        a labeled graph $G$ is a nonnegative number.
 
+  - What does /acyclic/ or /cycle-free/ mean?  [fn::page 324]  ::
+
+       An /acyclic/ or /cycle-free/ graph has no cycles.
+
+  - What is a /tree/?  [fn::page 324]  :: 
+
+       A /tree/ is a connected acyclic graph.
+
+  - What is a /forest/?  [fn::page 324]  :: 
+
+       A /forest/ is an acyclic graph.  It may or may not be
+       connected.
+
+  - What theorem defines a tree?  [fn::page 325]  :: 
+
+       *Theorem*: Let $G$ be a graph with more than one vertex.  Then
+       the following are equivalent:
+
+    1. $G$ is a tree.
+
+    2. Each pair of vertices is connected by exactly one path.
+
+    3. $G$ is connected, but if any edge is deleted then the resulting
+       graph is not connected.
+
+    4. $G$ is cycle-free, but if any edge is added to the graph then
+       the resulting graph has exactly one cycle.
+
+  - What theorem adds additional definitions for finite graphs?  [fn::page 325]  ::
+
+       *Theorem*: Let $G$ be a finite graph with $n > 1$ vertices.
+       Then the following are equivalent:
+
+    1. $G$ is a tree.
+
+    2. $G$ is cycle-free and has $n-1$ edges.
+
+    3. $G$ is connected and has $n-1$ edges.
+
+  - What are some general properties of trees?  [fn::page 325]  ::
+
+    1. A tree is a bipartite graph.
+
+    2. A tree is a planar graph.
+
+    3. A finite nontrivial tree has at least two /endpoints/ (vertices
+       of degree 1).
+
+    4. In a nontrivial tree, each vertex is either an endpoint or a
+       cut point.
+
+  - What is a /spanning tree/?  [fn::page 325]  ::
+
+       A /spanning tree/ is a subgraph $T$ of a graph $G$ if $T$ is a
+       tree and $T$ includes all the vertices of $G$.
+
+  - What is a /minimal spanning tree/?  [fn::page 325]  :: 
+
+       A /minimal spanning tree/ of a graph $G$ is a spanning tree of
+       $G$ such that the sum of the weights of its edges is minimal
+       among all spanning trees of $G$.
+
+  - What is an algorithm to find a minimal spanning tree of a finite connected labeled graph $G$ with $m$ vertices.  [fn::page 325]  :: 
+
+       This algorithm is more difficult to program in a computer.
+
+    1. Order the edges of $G$ according to decreasing weight.
+
+    2. Proceeding sequentially, delete each edge which does not
+       disconnect the graph until $m - 1$ edges remain.
+
+    3. Take the remaining edges as forming a minimal spanning tree of
+       $G$.
+
+  - What is another algorithm to find a minimal spanning tree of a finite connected labeled graph $G$ with $m$ vertices.  [fn::page 325]  :: 
+
+       This algorithm is less difficult to program in a computer.
+
+    1. Order the edges according to increasing weight.
+
+    2. Beginning with only the vertices of $G$, add one edge after
+       another where each edge has minimal weight and does not form a
+       cycle.
+
+    3. After adding $m - 1$ edges obtain a minimal spanning tree.
+
+  - Are minimal spanning trees unique?  [fn::page 326]  ::
+
+       In general, no, since some edges can be of the same weight.
+
+  - What is a /rooted tree/?  [fn::page 326]  :: 
+
+       A /rooted tree/ $R$ consists of a tree graph together with a
+       designated vertex $r$ called the /root/ of the tree.
+
+  - What is the /level/ or /depth/ or /generation/ of a vertex in a rooted tree?  [fn::page 326]  :: 
+
+       The length of the unique path from the root $r$ to $v$ is the
+       /level/, /depth/, or /generation/.
+
+  - What are the /leaves/ of a rooted tree?  [fn::page 326]  :: 
+
+       The /leaves/ of a rooted tree are the endpoints, excluding the
+       root $r$ (if it is an endpoint).
+
+  - What is a /branch/ of a rooted tree?  [fn::page 326]   :: 
+
+       A /branch/ is a continuously directed path from a vertex to a
+       leaf.
+
+  - What does /precedes/ mean in the context of a rooted tree?  [fn::page 326]  :: 
+
+       A vertex $u$ /precedes/ a vertex $v$ if the path from the root
+       $r$ to $v$ includes $u$.
+
+  - What does /follows/ mean in the context of a rooted tree?  [fn::page 326]  :: 
+
+       A vertex $v$ /follows/ a vertex $u$ if the path from the root
+       $r$ to $v$ includes $u$.
+
+  - What does /immediately follows/ mean in the context of a rooted tree?  [fn::page 326]  :: 
+
+       A vertex $v$ /immediately follows/ $u$ if $v$ follows $u$ and
+       is adjacent to $u$.  That is, there is an edge that includes
+       $u$ and $v$.
+
+  - What is an /ordered rooted tree/?  [fn::page 326]  :: 
+
+       An /ordered rooted tree/ is a tree $R$ in which the edges
+       leaving each vertex are linearly ordered.
+
+  - What is a /directed graph/ or /digraph/?  [fn::page 328]  :: 
+
+       A /directed graph/ or /digraph/ is a multigraph with a
+       direction assigned to each edge.
+
+  - What is an /arc/?  [fn::page 328]  :: 
+
+       An /arc/ is a directed edge in a /digraph/, and is generally
+       written as:
+
+       \[ a = \langle u, v \rangle \]
+
+  - What is an /initial point/?  [fn::page 328]  ::
+
+       An /initial point/ is the first vertex in an arc of a digraph.
+       An arc /begins/ at its /initial point/.
+
+  - What is a /terminal point/?  [fn::page 328]  ::
+
+       A /terminal point/ is the second vertex in an arc of a digraph.
+       An arc /ends/ at its /terminal point/.
+
+  - What is the /outdegree/ of a vertex $v$ in a digraph?  [fn::page 328]  :: 
+
+       The /outdegree/ of a vertex $v$ in a digraph is the number of
+       arcs beginning at $v$.
+
+  - What is the /indegree/ of a vertex $v$ in a digraph?  [fn::page 328]  :: 
+
+       The /indegree/ of a vertex $v$ in a digraph is the number of
+       arcs ending at $v$.
+
+  - What relationships relate indegrees, outdegrees, and arcs of a digraph?  [fn::page 328]  :: 
+
+       The sum of the outdegrees equals the sum of the indegrees,
+       which equals the number of arcs.
+
+  - What is a /source/ in a digraph?  [fn::page 329]  :: 
+
+       A /source/ is a vertex with 0 indegree.
+
+  - What is a /sink/ in a digraph?  [fn::page 329]  ::
+
+       A /sink/ is a vertex with 0 outdegree.
+
+  - What is a /labeled directed graph/ or /labeled digraph/?  [fn::page 329]  :: 
+
+       A /labeled directed graph/ or /labeled digraph/ is a digraph
+       wherein the arcs and/or vertices are labeled with some type of
+       data.
+
+  - What is the relationship between the concepts of relations on a set and digraphs without parallel arcs?  [fn::page 329]  :: 
+
+       They are one and the same.
+
+  - What is the /matrix/ of a digraph?  [fn::page 329]  :: 
+
+       Let $D$ be a digraph with vertices $v_1, v_2, \ldots, v_m$.
+       The /matrix/ of $D$ is the $m \times m$ matrix $M_D =
+       (m_{ij})$, where $m_{ij}$ = the number of arcs beginning at
+       $v_i$ and ending at $v_j$.
+
+  - What is the significance of digraph matrix with only zeroes and ones?  [fn::page 329]  :: 
+
+       It has no parallel arcs.
+
+  - What is a /walk/ in a digraph?  [fn::page 330]  :: 
+
+       A /walk/ $W$ in a digraph $D$ is an alternating sequence of
+       vertices and arcs,
+
+       \[ W = (v_0, a_1, v_1, a_2, v_2, \ldots, a_n, v_n) \]
+
+       such that each arch $a_i$ begins at $v_{i-1}$ ends at $v_i$.
+
+  - What is a /semiwalk/ in a digraph?  [fn::page 330]  :: 
+
+       A /semiwalk/ is a walk except that the arc $a_i$ may begin at
+       either $v_{i-1}$ or $v_i$ and end at the other vertex.
+
+       In other words, a semiwalk is the same as a walk on the
+       undirected multigraph $D$.
+
+  - What are the types of connectivity in a digraph $D$ ?  [fn::page 330] ::
+
+    1. /Weakly connected/ or /weak/: there is a semipath between any
+       two vertices $u$ and $v$ of $D$.
+
+    2. /Unilaterally connected/ or /unilateral/: for any vertices $u$
+       and $v$ of $D$, there is either a path from $u$ to $v$ or a
+       path from $v$ to $u$.  Implies /weak/.
+
+    3. /Strongly connected/ or /strong/: for any vertices $u$ and $v$
+       of $D$, there is a path from $u$ to $v$ and from $v$ to $u$.
+       Implies /unilateral/.
+
+    4. /Strictly unilateral/:  /unilateral/ but not /strong/
+
+    5. /Strictly weak/:  /weak/ but not /unilateral/
+
+  - What is a /spanning walk/?  [fn::page 331]  ::
+
+       A /spanning walk/ is a walk containing all the vertices of a
+       digraph.
+
+  - What theorem governs the connectivity of spanning walks?  [fn::page 331]  :: 
+
+       *Theorem*:  Let $D$ be a finite digraph.  Then
+
+    1. $D$ is weak if and only if $D$ has a spanning semiwalk.
+
+    2. $D$ is unilateral if and only if $D$ has a spanning walk.
+
+    3. $D$ is strong if and only if $D$ has a closed spanning walk
+
+  - What theorem relates the number of walks in a digraph?  [fn::page 331]  ::
+
+       *Theorem*: Let $M$ be the matrix of a digraph $D$.  Then the
+       /(i, j)/-entry of the matrix $M^n$ gives the number of walks of
+       length $n$ from the vertex $v_i$ to the vertex $v_j$.
+
+  - What theorem relates sources, sinks, and cycles in a digraph?  [fn::page 331]  :: 
+
+       *Theorem*: If a finite digraph $D$ contains no (directed)
+       cycles, then $D$ contains at least one source and at least one
+       sink.
+
 # Local variables:
 # org-html-postamble: nil
 # End:
 
 #  LocalWords:  sim lnot DeMorgan's leftrightarrow vdash Rightarrow
 #  LocalWords:  notin emptyset setminus usepackage mathrsfs mathscr
-#  LocalWords:  le mn
+#  LocalWords:  le mn langle rangle outdegree indegree indegrees ij
+#  LocalWords:  outdegrees semiwalk
