@@ -1,4 +1,4 @@
-#+OPTIONS: toc:nil
+#+OPTIONS: toc:nil f:nil
 #+OPTIONS: tex:dvipng
 #+HTML_HEAD_EXTRA: <style type="text/css">
 #+HTML_HEAD_EXTRA: dt {text-align: center;}
@@ -1426,3 +1426,7 @@
 
 #  LocalWords:  sim lnot DeMorgan's leftrightarrow vdash Rightarrow
 #  LocalWords:  notin emptyset setminus usepackage mathrsfs mathscr
+
+# Local variables:
+# org-html-postamble: nil
+# End:
