@@ -1931,6 +1931,81 @@
        cycles, then $D$ contains at least one source and at least one
        sink.
 
+  - What is the definition of a /finite state machine/ or /complete sequential machine/?  [fn::page 331]  :: 
+
+       A /finite state machine/ or /complete sequential machine/ $M =
+       \langle A, S, Z, f, g \rangle$ consists of five things.
+
+    1. A finite set $A$ of /input symbols/.
+
+    2. A finite set $S$ of /internal states/.
+
+    3. A finite set $Z$ of /output symbols/.
+
+    4. A /next-state function/ $f$ from $S \times A$ into $S$.
+
+    5. An /output function/ $g$ from $S \times A$ into $Z$.
+
+  - How is a finite state machine designated when it also is given an /initial state/ $q_0$ ?  [fn::page 331]  ::
+
+       \[ M = \langle A, S, Z, q_0, f, g \rangle \]
+
+  - What is a /state diagram/ for a finite state machine?  [fn::page 332]  ::
+
+       A /state diagram/ is a compact form for representing a finite
+       state machine and is a labeled directed graph $D$.  The
+       vertices of $D$ are the states $S$ of $M$ and if $f(q_i, q_j) =
+       q_k$ and $g(q_i, q_j) = z_r$ then there is an arc from $q_i$ to
+       $q_k$ which is labeled with the pair $a_j, z_r$.
+
+  - What is a /state table/ for a finite state machine?  [fn::page 332]  :: 
+
+       A /state diagram/ is a compact form for representing a finite
+       state machine which for each combination of state and input
+       lists the next state and the output.
+
+  - What theorem applies finite state machines to simple arithmetic?  [fn::page 333]  :: 
+
+       *Theorem*: There is no finite state machine which can do binary
+       multiplication.  However, if we limit the size of the numbers
+       to be multiplied, then such machines do exist.
+
+  - What is a /finite automaton/?  [fn::page 334]  :: 
+
+       A /finite automaton/ $M = \langle A, S, T, q_0, f \rangle$
+       consists of five things.
+
+    1. A finite set $A$ of /input symbols/.
+
+    2. A finite set $S$ of /internal states/.
+
+    3. A subset $T$ of $S$ (whose elements are called /accepting
+       states/).
+
+    4. An /initial state/ $q_0$ in $S$.
+
+    5. A /next-state function/ $f$ from $S \times A$ into $S$.
+
+  - What does it mean for a finite automaton to /recognize/ or /accept/ an input string $W$ ?  [fn::page 334]  ::
+
+       A finite automaton /recognizes/ or /accepts/ an input string
+       $W$ if the final state $s_n$ is an accepting state, i.e., $s
+       \in T$.
+
+  - What is an analogy between finite state machines and finite automata?  [fn::page 334]  :: 
+
+       A finite automaton is a finite state machine equipped with an
+       output function $g$ from $S \times A$ into $Z = \{\text{YES},
+       \text{NO}\}$ as follows:
+
+       \begin{equation*}
+       g(q_i, a_j) =
+       \begin{cases}
+       \text{YES} & \text{ if } f(q_i, a_j) \text{ is accepting (belongs to } T \text{)} \\
+       \text{NO} & \text{ if } f(q_i, a_j) \text{ is nonaccepting } 
+       \end{cases}
+       \end{equation*}
+
 # Local variables:
 # org-html-postamble: nil
 # End:
