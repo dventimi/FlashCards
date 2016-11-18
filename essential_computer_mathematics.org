@@ -1410,6 +1410,188 @@
 
 * Boolean Algebra, Logic Gates
 
+  - What is a /Boolean Algebra/?  [fn::page 170]  ::
+
+       Let $B$ be a set on which are defined two binary operations,
+       $+$ and $*$, and a unary operation, $'$.  Let $0$ and $1$
+       denote two distinct elements of $B$.  Then a /Boolean Algebra/
+       is the following sextuplet
+
+       \[ \langle B, +, *, ', 0, 1 \rangle \]
+
+       so long as the /axioms of Boolean Algebra/ hold.
+
+  - What are the /axioms of Boolean Algebra/?  [fn::page 170]  :: 
+
+       For any elements /a, b, c/ of set /B/
+
+
+       #+CAPTION:  Axioms of Boolean Algebra
+       | /                 | <                             | <                           |
+       | Commutative Laws  | $a + b = b + a$               | $a * b = b * a$             |
+       | Distributive Laws | $a + (b*c) = (a + b)*(a + c)$ | $a*(b + c) = (a*b) + (a*c)$ |
+       | Identity Laws     | $a + 0 = a$                   | $a*1 = a$                   |
+       | Complement Laws   | $a + a' = 1$                  | $a*a' = 0$                  |
+
+  - What is the /zero/ element of a Boolean algebra?  [fn::page 170]  ::
+
+       The /zero/ element is 0 in the axioms of Boolean algebra.
+
+  - What is the /unit/ element of a Boolean algebra?  [fn::page 170]  :: 
+
+       The /unit/ element is 1 in the axioms of Boolean algebra.
+
+  - What is the /sum/ in a Boolean algebra?  [fn::page 170]  :: 
+
+       A /sum/ is the result of the operation +.
+
+  - What is the /product/ in a Boolean algebra  [fn::page 170]  :: 
+
+       A /product/ is the result of the operation *.
+
+  - What are the zero and unit elements of the Boolean algebra $\mathscr{C}$, a collection of sets closed under union, intersection, and complement?  [fn::page 171]  :: 
+
+       The zero element is the empty set $\emptyset$.  The unit
+       element is the universal set $U$.
+
+  - What are the zero and unit elements of the Boolean algebra $\Pi$, the set of propositions?  [fn::page 171]  :: 
+
+       The zero element is /f/, a logical contradiction.  The unit
+       element is /t/, a logical tautology.
+
+  - What is the /dual/ of a statement in a Boolean algebra /B/?  [fn::page 171]  :: 
+
+       The /dual/ of a statement is the statement obtained by
+       interchanging the operations + and *, and interchanging the
+       corresponding identity elements 0 and 1, in the original
+       statement.
+
+  - What is the /Principle of Duality/  [fn::page 171]  :: 
+
+       *Theorem:* The dual of any theorem in a Boolean algebra is also
+       a theorem.
+
+  - What are the Basic Theorems of Boolean Algebra?  [fn::page 172]  :: 
+
+       Let /a, b, c/ be any elements of a Boolean algebra B.
+
+       *Theorem:*
+
+       #+CAPTION:  Basic Theorems of Boolean Algebra
+       | /                | <                           | <                   |
+       | Idempotent Laws  | $a + a = a$                 | $a*a = a$           |
+       | Boundedness Laws | $a + 1 = 1$                 | $a*0 = 0$           |
+       | Absorption Laws  | $a + (a*b) = a$             | $a*(a + b) = a$     |
+       | Associative Laws | $(a + b) + c = a + (b + c)$ | $(a*b)*c = a*(b*c)$ | 
+
+  - What additional theorem adds to the properties of a Boolean algebra?  [fn::page 172]  ::
+
+       *Theorem:* Let /a/ be any element in a Boolean algebra /B/.
+
+    1. /Uniqueness of Complement/:  $a + x = 1, a*x = 0 \Rightarrow x = a'$
+
+    2. /Involution Law/:  $(a')' = a$
+
+    3. $0' = 1, 1' = 0$
+
+  - What additional theorem rounds out the properties of a Boolean algebra?  [fn::page 172]  ::
+
+       *Theorem (DeMorgan's Laws):*
+
+    1. $(a + b)' = a' * b'$
+
+    2. $(a*b)' = a' + b'$
+
+  - What does /partial ordering/ on a set $S$, or a /poset/ mean?  [fn::page 172]  ::
+
+       A /partial ordering/ on a set $S$, or a /poset/ is a relation
+       $\lesssim$ that obeys the following three properties.
+
+    1. $a \lesssim a, \forall a \in S$
+
+    2. $a \lesssim b \land b \lesssim a \Rightarrow a = b$
+
+    3. $a \lesssim b \land b \lesssim c \Rightarrow a \lesssim c$
+
+  - What does $a \precsim b$ mean for a poset?  [fn::page 172]  ::
+
+       It means "/a/ precedes /b/."
+
+  - What does $a \succsim b$ mean for a poset?  [fn::page 172]  :: 
+
+       It means "/a/ succeeds /b/."
+
+  - What does $a \prec b$ mean for a poset?  [fn::page 172]  :: 
+
+       It means "/a/ strictly precedes /b/" such that $a \precsim b
+       \land a \not= b$.
+
+  - What does $a \succ b$ mean for a poset?  [fn::page 172]  :: 
+
+       It means "/a/ strictly succeeds /b/" such that $b \prec a$.
+
+  - What does the poset relation "/a/ divides /b/" mean?  [fn::page 172]  :: 
+
+       The poset relation "/a/ divides /b/", written $a \lvert b$,
+       means
+
+       \[ a \lvert b \Rightarrow \exists c \mid ac = b \]
+
+  - What does /noncomparable/ mean?  [fn::page 172]  ::
+
+       /Noncomparable/ applies to elements /a/ and /b/ of a set /S/ if
+       neither $a \lesssim b$ nor $b \lesssim a$.
+
+  - What does /comparable/ mean?  [fn::page 172]  :: 
+
+       /Comparable/ applies to elements /a/ and /b/ of a set /S/ if
+       either $a \lesssim b$ or $b \lesssim a$.
+
+  - What does /totally ordered/ or /linearly ordered/ mean?  [fn::page 172]  ::
+
+       /Totally ordered/ or /linearly ordered/ means that every pair
+       of elements of /S/ are comparable.
+
+  - What is a /chain/?  [fn::page 172]  ::
+
+       A /chain/ is a set /S/ that is totally ordered.
+
+  - What is the /usual order/ on the set of positive integers *N*?  [fn::page 173]  :: 
+
+       The /usual order/ is the relation $le$ that imposes not just a
+       partial order but a total order on *N*.
+
+  - What important theorem of Boolean algebra applies to partially ordered sets?  [fn::page 173]  ::
+
+       *Theorem:* Let /B/ be a Boolean algebra.  Then /B/ is a
+       partially ordered set, where $a \lesssim b$ if and only if $a +
+       b = b$.
+
+  - How are the elements of a Boolean algebra related to the zero and unit elements?  [fn::page 173]  ::
+
+       \[ 0 \lesssim a \lesssim 1 \forall a \in B \]
+
+  - What is an /immediate successor/ in a Boolean algebra?  [fn::page 173]  ::
+
+       An /immediate successor/ is an element $b$ of $S$ such that $a
+       \prec b$ but there is no element $x$ of $S$ such that $a \prec
+       x \prec b$.  It is written as $a \prec\prec b$.
+
+       \[ a \prec b, \nexists x \mid a \prec x \prec b \]
+
+  - What is an /atom/ of a Boolean algebra /B/?  [fn::page 173]  ::
+
+       An /atom/ is an element /a/ in /B/ that is an immediate
+       successor of the zero element.
+
+       \[ 0 \prec\prec a \]
+
+  - What theorem gives the cardinality a Boolean algebra?  [fn::page 173]  :: 
+
+       *Theorem:* Let /B/ be a finite Boolean algebra having /n/
+       atoms.  Then /B/ has 2^n elements, and every nonzero element
+       of /B/ is the sum of a unique set of atoms.
+
 * Simplification of Logic Circuits
 
 * Vectors, Matrices, Subscripted Variables
@@ -2091,4 +2273,5 @@
 #  LocalWords:  sim lnot DeMorgan's leftrightarrow vdash Rightarrow
 #  LocalWords:  notin emptyset setminus usepackage mathrsfs mathscr
 #  LocalWords:  le mn langle rangle outdegree indegree indegrees ij
-#  LocalWords:  outdegrees semiwalk perp
+#  LocalWords:  outdegrees semiwalk perp lesssim forall precsim prec
+#  LocalWords:  succsim succ nexists
