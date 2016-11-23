@@ -737,14 +737,14 @@
 
        and its /truth table/ is 
 
-       |------------------+-------------------|
+       |------------------+-----------------------|
        | $\boldsymbol{p}$ | $\boldsymbol{\sim p}$ |
-       |------------------+-------------------|
-       | /                | <                 |
-       | <c>              | <c>               |
-       | T                | F                 |
-       | F                | T                 |
-       |------------------+-------------------|
+       |------------------+-----------------------|
+       | /                | <                     |
+       | <c>              | <c>                   |
+       | T                | F                     |
+       | F                | T                     |
+       |------------------+-----------------------|
 
   - What is a /proposition/?  [fn::page 78]  ::
 
@@ -766,7 +766,7 @@
 
        A /contradiction/ is a proposition that contains only /F/ in
        the last column of its truth table.  Put another way, it is an
-       unverifiable proposition.
+       unverifiable proposition.  It has this truth table.
 
   - What is the /Principle of Substitution/?  [fn::page 80]  :: 
 
@@ -848,12 +848,38 @@
 
        \[ p \to q \]
 
+       It has this truth table.
+
+       |------------------+------------------+-----------------------------------|
+       | $\boldsymbol{p}$ | $\boldsymbol{q}$ | $\boldsymbol{p}\to\boldsymbol{q}$ |
+       |------------------+------------------+-----------------------------------|
+       | /                | <                | <                                 |
+       | <c>              | <c>              | <c>                               |
+       | T                | T                | T                                 |
+       | T                | F                | F                                 |
+       | F                | T                | T                                 |
+       | F                | F                | T                                 |
+       |------------------+------------------+-----------------------------------|
+
   - What is a /biconditional/?  [fn::page 80]  :: 
 
        A bi-conditional is a conditional of the form "/p/ if and only
        if /q/", and is denoted by
 
        \[ p \leftrightarrow q \]
+
+       It has this truth table.
+
+       |------------------+------------------+-----------------------------------------------|
+       | $\boldsymbol{p}$ | $\boldsymbol{q}$ | $\boldsymbol{p}\leftrightarrow\boldsymbol{q}$ |
+       |------------------+------------------+-----------------------------------------------|
+       | /                | <                | <                                             |
+       | <c>              | <c>              | <c>                                           |
+       | T                | T                | T                                             |
+       | T                | F                | F                                             |
+       | F                | T                | F                                             |
+       | F                | F                | T                                             |
+       |------------------+------------------+-----------------------------------------------|
 
   - What is a logical equivalence for $p \to q$?  [fn::page 81]  ::
 
@@ -870,6 +896,20 @@
   - What is the /contrapositive/ of the proposition $p \to q$?  [fn::page 82]  :: 
 
        \[ \sim q \to \sim p \]
+
+  - What is the truth table for the converse, inverse, and contrapositive?  [fn::page 82]  :: 
+
+       |------------------+------------------+------------------+-----------------------------------+-----------------------------------------------+---------------------------------------------|
+       |                  |                  | Conditional      | Converse                          | Inverse                                       | Contrapositive                              |
+       | $\boldsymbol{p}$ | $\boldsymbol{q}$ | $\boldsymbol{q}$ | $\boldsymbol{p}\to\boldsymbol{q}$ | $\boldsymbol{\sim p}\to\boldsymbol{\sim q}$   | $\boldsymbol{\sim q}\to\boldsymbol{\sim p}$ |
+       |------------------+------------------+------------------+-----------------------------------+-----------------------------------------------+---------------------------------------------|
+       | /                | <                | <                | <                                 | <                                             | <                                           |
+       | <c>              | <c>              | <c>              | <c>                               | <c>                                           | <c>                                         |
+       | T                | T                | T                | T                                 | T                                             | T                                           |
+       | T                | F                | F                | T                                 | T                                             | F                                           |
+       | F                | T                | T                | F                                 | F                                             | T                                           |
+       | F                | F                | T                | T                                 | T                                             | T                                           |
+       |------------------+------------------+------------------+-----------------------------------+-----------------------------------------------+---------------------------------------------|
 
   - What theorem relates a conditional statement and its contrapositive?  [fn::page 82]  :: 
 
@@ -909,7 +949,11 @@
 
        \[ p \to q, q \to r \vdash p\to r \]
 
-  - On what dos the validity of an argument depend?  [fn::page 83]  :: 
+  - How many rows does a truth table have for /n/ premises?  [fn::page 83]  :: 
+
+       2^n
+
+  - On what does the validity of an argument depend?  [fn::page 83]  :: 
 
        The validity of an argument depends exclusively upon the formal
        structure of the argument.
@@ -932,6 +976,24 @@
     2. The argument $P(p, q, \ldots) \vdash Q(p, q, \ldots)$ is valid.
 
     3. The proposition $P(p, q, \ldots) \to Q(p, q, \ldots)$ is a tautology.
+
+  - What is implied if $P \Rightarrow Q$ and $Q \Rightarrow P$?  [fn::page 84]  ::
+
+       It implies that $P$ and $Q$ have the same truth table, and so
+       $P \equiv Q$.
+
+  - How are the notions of logical implication and logical equivalence related?  [fn::page 84]  :: 
+
+       They are intimately related.
+
+  - What is the relationship between biconditional statements and conditional statements  [fn::page 84]  :: 
+
+       \[ (p \to q) \land (q \to p) \equiv p \leftrightarrow q \]
+
+  - Express the biconditional $p \leftrightarrow q$ in terms of the original three connectives $\land$, $\lor$, and $\sim$.  [fn::page 84]  :: 
+
+       \[ p \leftrightarrow q \equiv (\sim p \lor q) \land (\sim q
+       \land p) \]
 
 * Algorithms, Flowcharts, Pseudocode Programs
 
@@ -1593,17 +1655,11 @@
        of /B/ is the sum of a unique set of atoms.
 
 * Simplification of Logic Circuits
-
 * Vectors, Matrices, Subscripted Variables
-
 * Linear Equations
-
 * Combinatorial Analysis
-
 * Probability
-
 * Statistics; Random Variables
-
 * Graphs, Directed Graphs, Machines
 
   - What is a /graph/?  [fn::page 319]  ::
