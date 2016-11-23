@@ -7,6 +7,8 @@
 #+HTML_HEAD_EXTRA: table {margin-left: auto; margin-right: auto;}
 #+HTML_HEAD_EXTRA: </style>
 #+LATEX_HEADER: \usepackage{mathrsfs}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage{amssymb}
 #+LATEX_HEADER: \usepackage{cancel}
 
 #+TITLE:  Essential Computer Mathematics
@@ -1357,6 +1359,10 @@
 
        \[ (R^{-1})^{-1} = R \]
 
+  - What is the /equality/ relation?  [fn::page 143]  :: 
+
+       \[ \{(a, a) : \in A \} \]
+
   - What are the correspondences among the domains and ranges of a relation $R$ and its inverse $R^{-1}$  [fn::page 143]  ::
 
        The domain of $R^{-1}$ equals the range of $R$, and the range
@@ -1469,6 +1475,52 @@
 
        No two points of this graph shall lie on the same vertical
        line.
+
+  - What is the /identity function/?  [fn::page 147]  :: 
+
+       The function from /A/ into /A/ which assigns to each element
+       that element itself.
+
+       \[ 1_A(a) = a \]
+
+  - What is the /composition/ of functions /f/ and /g/?  [fn::page 164]  :: 
+
+       The composition of /f/ and /g/, written $g \circ f$, is the
+       function from the domain of /f/ into the codomain of /g/
+       defined by
+
+       \[ \left(g \circ f \right)(a) = g(f(a)) \]
+
+  # - Here's a figure ::
+
+  #      #+BEGIN_SRC ditaa :file fig1.png
+  #      +--------------+
+  #      | cRED         |
+  #      | Hello, Dave! |
+  #      |              |
+  #      +--------------+
+  #      #+END_SRC
+
+  # - Here's another figure :: 
+
+  #      #+BEGIN_SRC ditaa :file fig2.png
+  #      +--------------\        +--------------\
+  #      | cBLU         |	       | cGRE         |
+  #      | Hello, Matt! *--------* Hello, there |
+  #      | {s}          |	       | {s}          |
+  #      \--------------+	       \--------------+
+  #      #+END_SRC
+
+  # - Trying graphviz mode :: 
+
+  #      #+BEGIN_SRC dot :file file3.png
+  #      graph graphname { 
+  #               a -- b; 
+  #               b -- c;
+  #               b -- d;
+  #               d -- a;
+  #      }
+  #      #+END_SRC
 
 * Boolean Algebra, Logic Gates
 
@@ -2330,4 +2382,5 @@
 #  LocalWords:  notin emptyset setminus usepackage mathrsfs mathscr
 #  LocalWords:  le mn langle rangle outdegree indegree indegrees ij
 #  LocalWords:  outdegrees semiwalk perp lesssim forall precsim prec
-#  LocalWords:  succsim succ nexists
+#  LocalWords:  succsim succ nexists amsmath amssymb circ ditaa png
+#  LocalWords:  cRED cBLU cGRE graphviz graphname
