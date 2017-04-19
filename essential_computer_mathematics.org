@@ -7,15 +7,18 @@
 #+HTML_HEAD_EXTRA: table {margin-left: auto; margin-right: auto;}
 #+HTML_HEAD_EXTRA: </style>
 #+LATEX_HEADER: \usepackage{mathrsfs}
-#+LATEX_HEADER: \usepackage{amsmath}
-#+LATEX_HEADER: \usepackage{amssymb}
-#+LATEX_HEADER: \usepackage{cancel}
+# #+LATEX_HEADER: \usepackage{amsmath}
+# #+LATEX_HEADER: \usepackage{amssymb}
+# #+LATEX_HEADER: \usepackage{cancel}
 
 #+TITLE:  Essential Computer Mathematics
 #+AUTHOR: David A. Ventimiglia
 #+EMAIL: dventimi@gmail.com
 
 * Binary Number System
+  - Test ::
+	   \[ \mathscr{P} \]
+
   - What does /bistable/ mean?  [fn::page 1]  ::
 
        /Bistable/ refers to the way that many of the electronic
