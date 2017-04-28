@@ -1516,7 +1516,7 @@
 
   # - Trying graphviz mode :: 
 
-  #      #+BEGIN_SRC dot :file file3.png
+  #      #+BEGIN_SRC dot :file fig3.png
   #      graph graphname { 
   #               a -- b; 
   #               b -- c;
