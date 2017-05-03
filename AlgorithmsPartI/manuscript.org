@@ -44,7 +44,7 @@
 
   - What are some practical improvements for Mergesort? :: 
 
-    - Use insertion sort for small subarrays.
+    - Use insertion sort for small sub-arrays.
 
     - Stop if the array already is sorted.
 
@@ -53,9 +53,9 @@
 
   - What is the basic plan of the bottom-up Mergesort?  ::
 
-    - Pass through the array, merging subarrays of size 1.
+    - Pass through the array, merging sub-arrays of size 1.
 
-    - Repeat for subarrays of $2^N$.
+    - Repeat for sub-arrays of $2^N$.
 
   - What are some trade-offs of the bottom-up Mergesort?  ::
 
@@ -226,7 +226,7 @@
 
   - What is the basic plan for Quickselect?  ::
 
-    - Partition the array as in Quickshort.
+    - Partition the array as in Quicksort.
 
     - Repeat only in /one/ cell, either the left or the right, as $k >
       j$ or $k < j$.
@@ -264,5 +264,6 @@
 #  LocalWords:  le mn langle rangle outdegree indegree indegrees ij
 #  LocalWords:  outdegrees semiwalk perp lesssim forall precsim prec
 #  LocalWords:  succsim succ nexists amsmath amssymb circ ditaa png
-#  LocalWords:  cRED cBLU cGRE graphviz graphname
+#  LocalWords:  cRED cBLU cGRE graphviz graphname propto ge ln
 
+#  LocalWords:  Quickselect Tukey's ninther
