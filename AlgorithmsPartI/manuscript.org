@@ -1,0 +1,154 @@
+#+OPTIONS: toc:nil f:nil
+#+OPTIONS: tex:dvipng
+#+HTML_HEAD_EXTRA: <style type="text/css">
+#+HTML_HEAD_EXTRA: dt {text-align: center;}
+#+HTML_HEAD_EXTRA: dd {text-align: center;}
+#+HTML_HEAD_EXTRA: li {text-align: left;}
+#+HTML_HEAD_EXTRA: table {margin-left: auto; margin-right: auto;}
+#+HTML_HEAD_EXTRA: </style>
+#+LATEX_HEADER: \usepackage{mathrsfs}
+# #+LATEX_HEADER: \usepackage{amsmath}
+# #+LATEX_HEADER: \usepackage{amssymb}
+# #+LATEX_HEADER: \usepackage{cancel}
+
+#+TITLE:  Algorithms, Part I
+#+AUTHOR: David A. Ventimiglia
+#+EMAIL: dventimi@gmail.com
+
+* Mergesort
+
+  - What is the basic plan for Mergesort?  ::
+
+    - Divide the array into two halves.
+
+    - Recursively sort each half.
+
+    - Merge the two halves.
+
+  - What is the worst-case number of compare operations $C_N$ for Mergesort?  ::
+
+       \[ C_N \le N \lg N \]
+
+  - What is the worst-case number of array accesses $A_N$ for Mergesort?  ::
+
+       \[ A_N \le 6N \lg N \]
+
+  - How much extra space does Mergesort of an array of size $N$ use?  ::
+
+       \[ \propto N \]
+
+  - What is the definition of /in-place/ for a sorting algorithm? :: 
+
+       A sorting algorithm is /in-place/ if it uses $\le c \log N$
+       extra memory.
+
+  - What are some practical improvements for Mergesort? :: 
+
+    - Use insertion sort for small subarrays.
+
+    - Stop if the array already is sorted.
+
+    - Switch the roles of the input and auxiliary array in each
+      recursive step.
+
+  - What is the basic plan of the bottom-up Mergesort?  ::
+
+    - Pass through the array, merging subarrays of size 1.
+
+    - Repeat for subarrays of $2^N$.
+
+  - What are some trade-offs of the bottom-up Mergesort?  ::
+
+    - It is simpler.
+
+    - It is about 10% slower.
+
+  - What is a definition of /Computational complexity/?  ::
+
+       /Computational complexity/ is a framework to study the
+       efficiency of algorithms for solving a particular problem $X$.
+
+  - What is a definition of /Model of computation/?  :: 
+
+       /Model of computation/ comprises the allowable operations.
+
+  - What is a definition of /Cost model/?  :: 
+
+       /Cost model/ is an enumeration of an algorithm's operation
+       counts.
+
+  - What is a definition of /Upper bound/?  :: 
+
+       /Upper bound/ is the cost guarantee provided by *some*
+       algorithm for $X$.
+
+  - What is a definition of /Lower bound/?  :: 
+
+       /Lower bound/ is the proven limit on the cost guarantee of
+       *all* algorithms for $X$.
+
+  - What is a definition of /Optimal algorithm/?  :: 
+
+       An /Optimal algorithm/ is one with the best possible cost
+       guarantee for $X$.
+
+       \[ \text{lower bound} \sim \text{upper bound} \]
+
+  - What is the model of computation for sorting?  :: 
+
+       decision tree
+
+  - What is the cost model for sorting?  :: 
+
+       the number of compare operations
+
+  - What sorting algorithm is optimal with respect to $C_N$? ::
+
+       Mergesort
+
+  - What are the relationships between *upper bound*, *lower bound*, *best case*, and *worst case*? :: 
+
+    - *upper bound* = *worst case*
+
+    - *lower bound* = *best case*
+
+  - What is the worst-case performance of any compare-based sorting algorithm?  ::
+
+       \[ C_N \ge \lg (N!) \sim N \lg N \]
+
+  - When might the lower-bound fail?  :: 
+
+    - partially-ordered arrays
+
+    - duplicate keys
+
+    - digital properties of keys
+
+  - What is the definition of a /stable sorting algorithm/?  ::
+
+       A /stable sorting algorithm/ is one that preserves the relative
+       order of items that have equal keys.
+
+  - Which sorts are stable? :: 
+
+    - Insertion sort
+
+    - Mergesort
+
+  - What criteria applies to stable sorting algorithms?  ::
+
+       Stable sorting algorithms do not perform long-distance
+       exchanges that might move equal items past each other.
+
+  
+
+# Local variables:
+# org-html-postamble: nil
+# End:
+
+#  LocalWords:  sim lnot DeMorgan's leftrightarrow vdash Rightarrow
+#  LocalWords:  notin emptyset setminus usepackage mathrsfs mathscr
+#  LocalWords:  le mn langle rangle outdegree indegree indegrees ij
+#  LocalWords:  outdegrees semiwalk perp lesssim forall precsim prec
+#  LocalWords:  succsim succ nexists amsmath amssymb circ ditaa png
+#  LocalWords:  cRED cBLU cGRE graphviz graphname
