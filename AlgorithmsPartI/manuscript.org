@@ -140,7 +140,120 @@
        Stable sorting algorithms do not perform long-distance
        exchanges that might move equal items past each other.
 
-  
+  - Where is Mergesort used in Java?  ::
+
+       Mergesort is the standard system sort for Java objects.
+
+* Quicksort
+
+  - Were is Quicksort used in Java?  ::
+
+       Quicksort is the standard system sort for Java primitive types.
+
+  - What is the basic plan for Quicksort?  :: 
+
+    - Shuffle the array.
+
+    - Partition the array on $j$ into two cells:
+
+      - $a_i < a_j \text{for} i < j$
+
+      - $a_i > a_j \text{for} i > j$
+
+    - Sort each cell recursively.
+
+  - What is the basic plan for Quicksort partitioning?  ::
+
+       Repeat until $i$ and $j$ pointers cross:
+
+    - Scan $i$ from left to right so long as $a_i < a_{lo}$.
+
+    - Scan $j$ from right to left so long as $a_j > a_{lo}$.
+
+    - When /both/ of the above conditions are met, exchange $a_i$ with
+      $a_j$.
+
+  - Should a Quicksort implementation us an extra array?  ::
+
+       Though it makes partitioning easier and stable, it incurs the
+       extra space penalty that Mergesort does.  In that case, one
+       might as well just use Mergesort.
+
+  - Why is it necessary to shuffle the array first in Quicksort?  :: 
+
+       Shuffling is necessary to provided the performance guarantee.
+
+  - What is the best-case performance for Quicksort?  :: 
+
+       \[ \sim N \lg N \]
+
+  - What is the worst-case performance for Quicksort?  :: 
+
+       \[ \sim \frac{1}{2} N^2 \]
+
+  - What is the average number of compare operations $C_N$ for $N$ distinct keys in Quicksort? :: 
+
+       \[ \sim 2 N \ln N \]
+
+  - If Mergesort uses slightly fewer compare operations than Quicksort does then why is Quicksort typically faster? :: 
+
+       Quicksort typically is faster than Mergesort because in
+       practice it performs fewer data movement operations.
+
+  - Is Quicksort in-place?  :: 
+
+       yes
+
+  - Is Quicksort stable?  :: 
+
+       no
+
+  - What are some practical improvements for Quicksort?  :: 
+
+    - Revert to insertion sort for 10 or so items.
+
+    - Take median as pivot item.
+
+    - Estimate median by taking the median of a sample.
+
+    - Or take median-of-3
+
+  - What are some applications for Quickselect?  ::
+
+    - order statistics
+
+    - find the "top $k$."
+
+  - What is the basic plan for Quickselect?  ::
+
+    - Partition the array as in Quickshort.
+
+    - Repeat only in /one/ cell, either the left or the right, as $k >
+      j$ or $k < j$.
+
+  - What is the average performance of Quickselect?  ::
+
+       Quickselect on average is linear.
+
+  - What is the worst-case performance of Quickselect?  :: 
+
+       The worst-case performance of Quickselect is quadratic, just as
+       it is with Quicksort.
+
+  - What is 3-way partitioning?  :: 
+
+       3-way partitioning is a Quicksort scheme that partitions the
+       array into 3 cells instead of 2, which copes well with
+       duplicate keys.
+
+  - In practice what is the average performance of 3-way partitioning randomized Quicksort? :: 
+
+       linear
+
+  - What is "Tukey's ninther?"  :: 
+
+       "Tukey's ninther" is a median estimator, taken from the median
+       of the median of 3 samples, each sample of 3 entries.
 
 # Local variables:
 # org-html-postamble: nil
@@ -152,3 +265,4 @@
 #  LocalWords:  outdegrees semiwalk perp lesssim forall precsim prec
 #  LocalWords:  succsim succ nexists amsmath amssymb circ ditaa png
 #  LocalWords:  cRED cBLU cGRE graphviz graphname
+
