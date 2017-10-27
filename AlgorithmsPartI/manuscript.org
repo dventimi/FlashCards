@@ -15,6 +15,14 @@
 #+AUTHOR: David A. Ventimiglia
 #+EMAIL: dventimi@gmail.com
 
+* Union-Find
+
+* Analysis of Algorithms
+
+* Stacks and Queues
+
+* Elementary Sorts
+
 * Mergesort
 
   - What is the basic plan for Mergesort?  ::
@@ -255,6 +263,18 @@
        "Tukey's ninther" is a median estimator, taken from the median
        of the median of 3 samples, each sample of 3 entries.
 
+* Priority Queues
+
+* Elementary Symbol Tables
+
+* Balanced Search Trees
+
+* Geometric Applications of BSTs
+
+* Hash Tables
+
+* Symbol Table Applications
+
 # Local variables:
 # org-html-postamble: nil
 # End:
@@ -267,3 +287,4 @@
 #  LocalWords:  cRED cBLU cGRE graphviz graphname propto ge ln
 
 #  LocalWords:  Quickselect Tukey's ninther
+
